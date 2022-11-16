@@ -1,0 +1,23 @@
+@keyframes logo-shake {
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes text-bounce {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
