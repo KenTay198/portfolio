@@ -3,9 +3,10 @@ const en = {
     description:
       "20-year-old junior full-stack developer willing to learn more and more about the world of development.",
   },
+  job : "Junior Full-Stack Developer",
   nextPage : "Click for more information !",
   images : {
-    casquetteBeige : {
+    logo : {
       alt : "John-Kenneth Logo"
     }
   }

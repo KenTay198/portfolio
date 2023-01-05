@@ -1,13 +1,16 @@
 .layout {
   width: 100vw;
   height: 100vh;
-  background-color: transparent;
-  color: $primary;
+  overflow: hidden;
 
   main {
     z-index: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+
+    & > * {
+      padding-top: $navbarHeight;
+      height: 100%;
+    }
   }
 }

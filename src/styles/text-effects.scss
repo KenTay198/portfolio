@@ -1,0 +1,84 @@
+.shadowed {
+  filter: drop-shadow(20px 20px 15px rgba(0, 0, 0, 0.25));
+}
+
+.text-shadowed {
+  text-shadow: 5px 5px 7px rgba($color: #000000, $alpha: 0.5);
+}
+
+.hover-effect-1 {
+  position: relative;
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 0px solid transparent;
+    width: 0%;
+    height: 0%;
+    transition: all 0.3s ease;
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+  }
+
+  &:before {
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      width: calc(100% - 2px);
+      height: 20%;
+      border-color: $primaryAlt;
+    }
+  }
+
+  &.dark {
+    &:hover {
+      &::before,
+      &::after {
+        border-color: $secondaryAlt;
+      }
+    }
+  }
+}
+
+.hover-effect-underline {
+  position: relative;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 0%;
+    transition: width 0.3s ease;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+  }
+
+  &:hover {
+    &::after {
+      width: calc(100% - 2px);
+      height: 1px;
+      border-bottom: 1px solid $primary;
+    }
+  }
+
+  &.dark {
+    &::after {
+      border-bottom: 1px solid $secondary;
+    }
+  }
+}

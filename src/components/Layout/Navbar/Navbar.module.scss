@@ -1,34 +1,239 @@
 .navbar {
-  margin-top: 15px;
+  padding-top: 5px;
   z-index: 1;
   position: fixed;
   width: 100%;
-  height: 30px;
+  height: $navbarHeight;
+  transition-duration: 0.2s;
+  backdrop-filter: blur(10px);
 
-  ul {
+  &.scrolled {
+    -webkit-box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 12px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .navbar-inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    .languageSelect {
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid $secondary;
-      color: $secondary;
-
-      option {
-        color: black;
-      }
+    .navbar-toggler,
+    .navbar-close {
+      display: none;
+      cursor: pointer;
     }
 
-    * {
-      font-weight: bold;
-      font-size: 20px;
-      transition-duration: 0.2s;
-      color: $secondary;
+    .nav-links {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+    }
 
-      &:hover {
-        transform: scale(1.1);
-        color: $secondaryAlt;
+    .nav-actions {
+      display: flex;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding: 5px;
+
+      * {
+        font-weight: bold;
+        font-size: 20px;
+        cursor: inherit;
+      }
+
+      &.language {
+        transition-duration: 0.2s;
+        select {
+          transition-duration: $colorThemeToggleDuration;
+        }
+
+        &:hover {
+          select {
+            color: $primaryAlt;
+          }
+        }
+
+        select {
+          background-color: transparent;
+          border: none;
+
+          option {
+            font-weight: normal;
+            color: black !important;
+          }
+        }
+      }
+
+      &.color-theme {
+        button {
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 30px;
+
+            path {
+              transition-duration: 0.2s;
+            }
+
+            &:hover {
+              path {
+                color: $primaryAlt;
+              }
+            }
+          }
+        }
+      }
+
+      &.nav-link {
+        * {
+          cursor: inherit;
+        }
+
+        a {
+          width: 100%;
+          transition-duration: $colorThemeToggleDuration;
+        }
+
+        &:not(.active) {
+          transition-duration: 0.2s;
+          &:hover {
+            * {
+              color: $primaryAlt;
+            }
+          }
+        }
+
+        &.active {
+          border: 2px solid $primaryAlt;
+
+          * {
+            color: $primaryAlt;
+          }
+        }
+      }
+    }
+  }
+
+  &.dark {
+    .navbar-inner {
+      .nav-links {
+        .nav-link {
+          &:not(.active) {
+            &:hover {
+              * {
+                color: $secondaryAlt;
+              }
+            }
+          }
+
+          &.active {
+            border: 2px solid $secondaryAlt;
+
+            * {
+              color: $secondaryAlt;
+            }
+          }
+        }
+      }
+
+      .nav-actions {
+        .language {
+          &:hover {
+            select {
+              color: $secondaryAlt;
+            }
+          }
+        }
+
+        .color-theme {
+          svg {
+            &:hover {
+              path {
+                color: $secondaryAlt;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 764px) {
+    .navbar-inner {
+      .navbar-toggler {
+        display: block;
+        font-size: 30px;
+      }
+
+      .nav-links {
+        padding-top: 10px;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        max-width: 0;
+        height: 100vh;
+        background-color: $primaryAlt;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: max-width 0.5s;
+        overflow: hidden;
+
+        * {
+          opacity: 0;
+          pointer-events: none;
+          transition-duration: 0.2s;
+        }
+
+        &.expanded {
+          max-width: 100vw;
+
+          * {
+            opacity: 1;
+            pointer-events: all;
+          }
+
+          .navbar-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            font-size: 30px;
+
+            path {
+              color: $secondary;
+            }
+          }
+        }
+
+        .nav-link {
+          width: 50%;
+          &:not(.active) {
+            a {
+              color : $secondary;
+            }
+            &:hover {
+              &::after, &::before {
+                border-color: $secondaryAlt;
+              }
+              * {
+                color: $secondaryAlt;
+              }
+            }
+          }
+
+          &.active {
+            border: 2px solid $secondaryAlt;
+
+            * {
+              color: $secondaryAlt;
+            }
+          }
+        }
       }
     }
   }

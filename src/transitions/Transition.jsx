@@ -1,21 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import variants from "./variants";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Transition = ({ children }: LayoutProps) => {
+const Transition = ({ children, ...props }) => {
   const { asPath } = useRouter();
 
-  const getVariants = () => {
-    if (asPath === "/") {
-      return variants.home;
-    }
+  const getVariants = () => {};
 
-    return variants.about;
-  };
+  useEffect(() => {
+
+  }, []);
 
   return (
     <div className="effect-1">
