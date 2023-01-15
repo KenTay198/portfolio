@@ -1,19 +1,24 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import fr from "@locales/layout/fr";
-import en from "@locales/layout/en";
+import content from "locales/layout.content";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.scss";
-import { useColorTheme } from "@context/ColorThemeContext";
+import { useColorTheme } from "context/ColorThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { AnimatedSlideDown } from "components/Animated/AnimatedContainers";
 
-const Navbar = () => {
+interface Props {
+  mode?: String;
+}
+
+const Navbar = ({ mode }: Props) => {
   const [{ theme }, dispatch] = useColorTheme();
   const router = useRouter();
   const { locale, asPath } = router;
-  const pageContent = locale === "fr" ? fr : en;
+  const pageContent = content[locale as keyof typeof content];
   const [expanded, setExpanded] = useState(false);
+  const animationDelay = 0.05;
 
   const changeLanguage = (e: any) => {
     const locale = e.target.value;
@@ -48,14 +53,15 @@ const Navbar = () => {
           {pageContent.navbar.map(({ path, label }, idx) => {
             const active = isActive(path);
             return (
-              <div
+              <AnimatedSlideDown
                 key={`nav-link${idx}`}
+                delay={animationDelay * idx}
                 className={`${theme} ${styles["nav-item"]} ${
                   styles["nav-link"]
                 } ${active ? styles["active"] : "hover-effect-1"}`}
               >
                 <Link href={path}>{label}</Link>
-              </div>
+              </AnimatedSlideDown>
             );
           })}
           <button
@@ -65,21 +71,29 @@ const Navbar = () => {
             <FaTimes />
           </button>
         </div>
-        <button className={styles["navbar-toggler"]} onClick={toggleExpanded}>
-          <FaBars />
-        </button>
+        <AnimatedSlideDown>
+          <button className={styles["navbar-toggler"]} onClick={toggleExpanded}>
+            <FaBars />
+          </button>
+        </AnimatedSlideDown>
         <div className={styles["nav-actions"]}>
-          <div className={`${styles["language"]} ${styles["nav-item"]}`}>
+          <AnimatedSlideDown
+            delay={animationDelay * pageContent.navbar.length}
+            className={`${styles["language"]} ${styles["nav-item"]}`}
+          >
             <select value={locale} onChange={changeLanguage}>
               <option value="fr">Français</option>
               <option value="en">English</option>
             </select>
-          </div>
-          <div className={`${styles["color-theme"]} ${styles["nav-item"]}`}>
+          </AnimatedSlideDown>
+          <AnimatedSlideDown
+            delay={animationDelay * (pageContent.navbar.length + 1)}
+            className={`${styles["color-theme"]} ${styles["nav-item"]}`}
+          >
             <button onClick={toggleColorTheme}>
               {theme === "light" ? <MdLightMode /> : <MdDarkMode />}
             </button>
-          </div>
+          </AnimatedSlideDown>
         </div>
       </div>
     </nav>

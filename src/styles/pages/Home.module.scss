@@ -27,12 +27,13 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
     align-items: center;
     justify-content: center;
     gap: 30px;
-    height: fit-content;
     width: 95%;
     margin: auto;
     overflow: hidden;
 
     .texte {
+      overflow: hidden;
+      padding: 5px;
       display: flex;
       flex-direction: column;
 
@@ -41,6 +42,11 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
         margin: 0;
         display: inline-block;
         width: fit-content;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
       }
 
       h1 {
@@ -100,12 +106,11 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
   @media (max-width: $bp2) {
     .homepage-content {
       flex-direction: column;
-      .logo {
-        * {
-          width: 150px;
-          height: auto;
-        }
+      img {
+        width: 150px;
+        height: auto;
       }
+
       .texte {
         display: flex;
         align-items: center;

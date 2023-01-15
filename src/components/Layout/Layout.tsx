@@ -2,14 +2,17 @@
 import React from "react";
 import styles from "./Layout.module.scss";
 import Navbar from "./Navbar/Navbar";
-import { useState, useEffect, useRef } from "react";
-import { useColorTheme } from "@context/ColorThemeContext";
+import { useEffect } from "react";
+import { useColorTheme } from "context/ColorThemeContext";
+import PageWrapper from "./PageWrapper/PageWrapper";
 
 interface LayoutProps {
+  mainclass?: string;
+  mode?: String;
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ mode, mainclass, children }: LayoutProps) => {
   const [{ theme, initialized }, dispatch] = useColorTheme();
 
   useEffect(() => {
@@ -22,6 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
         payload: { theme: prefersDark ? "dark" : "light" },
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -32,8 +36,10 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className={styles.layout}>
-      <Navbar />
-      <main>{children}</main>
+      <Navbar mode={mode} />
+      {/* <PageWrapper> */}
+        <main className={mainclass}>{children}</main>
+      {/* </PageWrapper> */}
     </div>
   );
 };
