@@ -18,6 +18,14 @@ const AboutPage = () => {
           </li>
         ))}
       </ul>
+      <p>
+        {pageContent.description.map((text, index) => (
+          <React.Fragment key={index}>
+            {text}
+            <br />
+          </React.Fragment>
+        ))}
+      </p>
     </Layout>
   );
 };

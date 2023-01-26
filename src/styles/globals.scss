@@ -17,18 +17,16 @@ body {
 
   &.light {
     background-color: $secondary;
-
-    * {
-      color: $primary;
-    }
+    color: $primary;
   }
 
   &.dark {
     background-color: $primary;
+    color: $secondary;
+  }
 
-    * {
-      color: $secondary;
-    }
+  * {
+    color: inherit;
   }
 }
 

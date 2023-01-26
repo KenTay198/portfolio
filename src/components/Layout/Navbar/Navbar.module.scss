@@ -46,23 +46,22 @@
 
       &.language {
         transition-duration: 0.2s;
+
         select {
           transition-duration: $colorThemeToggleDuration;
-        }
-
-        &:hover {
-          select {
-            color: $primaryAlt;
-          }
-        }
-
-        select {
           background-color: transparent;
           border: none;
 
           option {
             font-weight: normal;
             color: black !important;
+            background-color: $primary;
+          }
+        }
+
+        &:hover {
+          select {
+            color: $primaryAlt;
           }
         }
       }
@@ -214,10 +213,11 @@
           width: 50%;
           &:not(.active) {
             a {
-              color : $secondary;
+              color: $secondary;
             }
             &:hover {
-              &::after, &::before {
+              &::after,
+              &::before {
                 border-color: $secondaryAlt;
               }
               * {

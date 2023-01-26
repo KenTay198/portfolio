@@ -2,13 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  sassOptions : {
+  sassOptions: {
     prependData: `@import "./src/styles/variables.scss";`,
   },
-  i18n : {
-    locales : ["fr", "en"],
-    defaultLocale : "fr"
-  }
-}
+  i18n: {
+    locales: ["fr", "en"],
+    defaultLocale: "fr",
+  },
+  compiler: {
+    styledComponents: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

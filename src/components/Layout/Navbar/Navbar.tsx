@@ -7,6 +7,7 @@ import { useColorTheme } from "context/ColorThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AnimatedSlideDown } from "components/Animated/AnimatedContainers";
+import Select from "components/StyledComponents/Select";
 
 interface Props {
   mode?: String;
@@ -20,8 +21,7 @@ const Navbar = ({ mode }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const animationDelay = 0.05;
 
-  const changeLanguage = (e: any) => {
-    const locale = e.target.value;
+  const changeLanguage = (locale: string) => {
     router.push(router.asPath, router.asPath, { locale });
   };
 
@@ -81,10 +81,28 @@ const Navbar = ({ mode }: Props) => {
             delay={animationDelay * pageContent.navbar.length}
             className={`${styles["language"]} ${styles["nav-item"]}`}
           >
-            <select value={locale} onChange={changeLanguage}>
-              <option value="fr">Français</option>
-              <option value="en">English</option>
-            </select>
+            <Select
+              id="select"
+              options={[
+                { value: "fr", label: "Français" },
+                { value: "en", label: "English" },
+              ]}
+              selectTheme={{
+                background_color: "transparent",
+                transition_duration : "0.5s",
+                border_size: "0",
+                width: "100%",
+                height: "100%",
+              }}
+              optionTheme={{
+                focus_background_color:
+                  theme === "dark"
+                    ? styles["primary_alt"]
+                    : styles["secondary_alt"],
+              }}
+              value={locale}
+              onChange={changeLanguage}
+            />
           </AnimatedSlideDown>
           <AnimatedSlideDown
             delay={animationDelay * (pageContent.navbar.length + 1)}
