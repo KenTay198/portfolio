@@ -61,7 +61,7 @@
 
         &:hover {
           select {
-            color: $primaryAlt;
+            color: $secondaryAlt;
           }
         }
       }
@@ -100,62 +100,13 @@
         &:not(.active) {
           transition-duration: 0.2s;
           &:hover {
-            * {
-              color: $primaryAlt;
-            }
+            color: $secondaryAlt;
           }
         }
 
         &.active {
-          border: 2px solid $primaryAlt;
-
-          * {
-            color: $primaryAlt;
-          }
-        }
-      }
-    }
-  }
-
-  &.dark {
-    .navbar-inner {
-      .nav-links {
-        .nav-link {
-          &:not(.active) {
-            &:hover {
-              * {
-                color: $secondaryAlt;
-              }
-            }
-          }
-
-          &.active {
-            border: 2px solid $secondaryAlt;
-
-            * {
-              color: $secondaryAlt;
-            }
-          }
-        }
-      }
-
-      .nav-actions {
-        .language {
-          &:hover {
-            select {
-              color: $secondaryAlt;
-            }
-          }
-        }
-
-        .color-theme {
-          svg {
-            &:hover {
-              path {
-                color: $secondaryAlt;
-              }
-            }
-          }
+          border: 2px solid $secondaryAlt;
+          color: $secondaryAlt;
         }
       }
     }

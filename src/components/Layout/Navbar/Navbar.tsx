@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import content from "locales/layout.content";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.scss";
-import { useColorTheme } from "context/ColorThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { AnimatedSlideDown } from "components/Animated/AnimatedContainers";
+import { AnimatedSlideDown } from "components/Animated/EnterAnimations";
 import Select from "components/StyledComponents/Select";
 
 interface Props {
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const Navbar = ({ mode }: Props) => {
-  const [{ theme }, dispatch] = useColorTheme();
   const router = useRouter();
   const { locale, asPath } = router;
   const pageContent = content[locale as keyof typeof content];
@@ -31,19 +29,8 @@ const Navbar = ({ mode }: Props) => {
     return currentPath === pagePath;
   };
 
-  const toggleColorTheme = () => {
-    document.body.classList.remove(theme);
-    dispatch({ type: "TOGGLE_THEME" });
-  };
-
-  const toggleExpanded = () => setExpanded(!expanded);
-
   return (
-    <nav
-      className={`${styles["navbar"]} ${
-        theme === "dark" ? styles["dark"] : ""
-      }`}
-    >
+    <nav className={styles["navbar"]}>
       <div className={styles["navbar-inner"]}>
         <div
           className={`${styles["nav-links"]} ${
@@ -56,9 +43,9 @@ const Navbar = ({ mode }: Props) => {
               <AnimatedSlideDown
                 key={`nav-link${idx}`}
                 delay={animationDelay * idx}
-                className={`${theme} ${styles["nav-item"]} ${
-                  styles["nav-link"]
-                } ${active ? styles["active"] : "hover-effect-1"}`}
+                className={`${styles["nav-item"]} ${styles["nav-link"]} ${
+                  active ? styles["active"] : "hover-effect-1"
+                }`}
               >
                 <Link href={path}>{label}</Link>
               </AnimatedSlideDown>
@@ -71,11 +58,6 @@ const Navbar = ({ mode }: Props) => {
             <FaTimes />
           </button>
         </div>
-        <AnimatedSlideDown>
-          <button className={styles["navbar-toggler"]} onClick={toggleExpanded}>
-            <FaBars />
-          </button>
-        </AnimatedSlideDown>
         <div className={styles["nav-actions"]}>
           <AnimatedSlideDown
             delay={animationDelay * pageContent.navbar.length}
@@ -89,28 +71,17 @@ const Navbar = ({ mode }: Props) => {
               ]}
               selectTheme={{
                 background_color: "transparent",
-                transition_duration : "0.5s",
+                transition_duration: "0.5s",
                 border_size: "0",
                 width: "100%",
                 height: "100%",
               }}
               optionTheme={{
-                focus_background_color:
-                  theme === "dark"
-                    ? styles["primary_alt"]
-                    : styles["secondary_alt"],
+                focus_background_color: styles["primary_alt"],
               }}
               value={locale}
               onChange={changeLanguage}
             />
-          </AnimatedSlideDown>
-          <AnimatedSlideDown
-            delay={animationDelay * (pageContent.navbar.length + 1)}
-            className={`${styles["color-theme"]} ${styles["nav-item"]}`}
-          >
-            <button onClick={toggleColorTheme}>
-              {theme === "light" ? <MdLightMode /> : <MdDarkMode />}
-            </button>
           </AnimatedSlideDown>
         </div>
       </div>

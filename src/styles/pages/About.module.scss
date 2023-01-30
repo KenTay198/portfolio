@@ -1,3 +1,27 @@
 .about {
-    
+  h1 {
+    font-size: 250px;
+  }
+
+  .texte {
+    background-color: $secondary;
+    color: $primary;
+
+    .presentation {
+      li {
+        display: flex;
+        justify-content: center;
+        gap: 300px;
+
+        p {
+          font-size: 40px;
+          flex: 1 1 0px;
+        }
+
+        p:first-of-type {
+          text-align: right;
+        }
+      }
+    }
+  }
 }

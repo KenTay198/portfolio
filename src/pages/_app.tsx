@@ -1,13 +1,13 @@
 import "../styles/globals.scss";
 import "../styles/transitions.scss";
 import type { AppProps } from "next/app";
-import { ColorThemeProvider } from "context/ColorThemeContext";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <ColorThemeProvider>
+      <ParallaxProvider>
         <Component {...pageProps} />
-      </ColorThemeProvider>
+      </ParallaxProvider>
   );
 }
 

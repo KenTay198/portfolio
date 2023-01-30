@@ -14,16 +14,10 @@ body {
 body {
   font-family: "Lato";
   transition: background-color $colorThemeToggleDuration;
-
-  &.light {
-    background-color: $secondary;
-    color: $primary;
-  }
-
-  &.dark {
-    background-color: $primary;
-    color: $secondary;
-  }
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: $primary;
+  color: $secondary;
 
   * {
     color: inherit;
@@ -59,12 +53,9 @@ button {
   background-color: transparent;
 }
 
-.shake {
-  animation-name: logo-shake;
-  animation-iteration-count: infinite;
-  animation-duration: 0.25s;
-}
-
-.page {
-  height: 100vh;
+img.drop-shadow {
+  -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+  filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
 }

@@ -25,6 +25,6 @@
       "context/*" : ["context/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/locales/index/fr.js", "src/locales/index/fr.js", "src/locales/index/en.js", "src/locales/index/en.js", "src/transitions/Transition.jsx", "src/transitions/Transition.jsx", "src/transitions/RouteHistory.jsx", "src/transitions/RouteHistory.jsx", "src/pages/index.tsx", "src/pages/index.tsx", "src/pages/about.tsx", "src/pages/about.tsx", "src/components/Layers/Home/Home.Layertsx", "src/components/Layout/PageWrapper/PageWrapper.jsx", "src/components/Layout/PageWrapper/PageWrapper.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "***/**/*.tsx"],
   "exclude": ["node_modules"]
 }
