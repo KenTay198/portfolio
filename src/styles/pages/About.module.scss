@@ -1,25 +1,52 @@
 .about {
   h1 {
     font-size: 250px;
+    margin: 0;
+    margin-top: 150px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      pointer-events: none;
+    }
   }
 
   .texte {
-    background-color: $secondary;
-    color: $primary;
-
     .presentation {
-      li {
-        display: flex;
-        justify-content: center;
-        gap: 300px;
+      display: flex;
+      flex-direction: column;
 
-        p {
-          font-size: 40px;
-          flex: 1 1 0px;
+      li {
+        color: $primary;
+        font-size: 40px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0px black;
+        width: 45%;
+        height: 100px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+
+        &:nth-of-type(2n + 1) {
+          text-align: end;
+          background-image: url("/images/components/presentation_left.png");
+          padding-right: 50px;
+
+          p {
+            margin: auto 0 auto auto;
+          }
         }
 
-        p:first-of-type {
-          text-align: right;
+        &:nth-of-type(2n) {
+          align-self: flex-end;
+          background-image: url("/images/components/presentation_right.png");
+          background-position: right;
+          padding-left: 50px;
+
+          p {
+            margin: auto auto auto 0;
+          }
         }
       }
     }

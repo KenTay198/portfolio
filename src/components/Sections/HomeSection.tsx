@@ -4,34 +4,23 @@ import styles from "styles/pages/Home.module.scss";
 import Link from "next/link";
 import CasquetteBeige from "assets/images/casquette-beige.png";
 import {
-  AnimatedRotate,
-  AnimatedSlideRight,
-} from "components/Animated/EnterAnimations";
-import { InfiniteBounce } from "components/Animated/InfiniteAnimations";
-import { ClickRotate } from "components/Animated/ClickAnimations";
+  AnimateRotate,
+  AnimateSlide,
+} from "components/Animations/EnterAnimations";
+import { InfiniteBounce } from "components/Animations/InfiniteAnimations";
+import { ClickRotate } from "components/Animations/ClickAnimations";
 import { useRouter } from "next/router";
 import content from "locales/index.content";
-import { useState } from "react";
-import { useParallax } from "react-scroll-parallax";
-
 const HomeSection = () => {
   const router = useRouter();
   const { locale } = router;
   const pageContent = content[locale as keyof typeof content];
 
-  const image = useParallax({
-    speed: -20,
-  });
-
-  const texte = useParallax({
-    speed: -10,
-  });
-
   return (
     <section className={styles["homepage"]}>
       <div className={styles["homepage-content"]}>
-        <div ref={image.ref as React.RefObject<HTMLDivElement>}>
-          <AnimatedRotate delay={0.3}>
+        <div>
+          <AnimateRotate delay={0.3}>
             <InfiniteBounce>
               <ClickRotate>
                 <Image
@@ -42,30 +31,27 @@ const HomeSection = () => {
                 />
               </ClickRotate>
             </InfiniteBounce>
-          </AnimatedRotate>
+          </AnimateRotate>
         </div>
 
-        <div
-          className={styles["texte"]}
-          ref={texte.ref as React.RefObject<HTMLDivElement>}
-        >
-          <AnimatedSlideRight delay={0.4}>
+        <div className={styles["texte"]}>
+          <AnimateSlide direction="right" delay={0.4}>
             <h1>
               John-Kenneth, Stephen
               <br />
               TAYLOR AFONAH
             </h1>
-          </AnimatedSlideRight>
-          <AnimatedSlideRight delay={0.5}>
+          </AnimateSlide>
+          <AnimateSlide direction="right" delay={0.5}>
             <h2>{pageContent.job}</h2>
-          </AnimatedSlideRight>
-          <AnimatedSlideRight delay={0.6}>
+          </AnimateSlide>
+          <AnimateSlide direction="right" delay={0.6}>
             <Link href={"/about"}>
               <p className={`${styles["next-page"]} hover-effect-underline`}>
                 {pageContent.nextPage}
               </p>
             </Link>
-          </AnimatedSlideRight>
+          </AnimateSlide>
         </div>
       </div>
     </section>

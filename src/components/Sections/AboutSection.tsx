@@ -1,47 +1,28 @@
-import Layout from "components/Layout/Layout";
 import React, { useRef } from "react";
 import { useRouter } from "next/router";
 import content from "locales/about.content";
 import styles from "styles/pages/About.module.scss";
-import { useParallax } from "react-scroll-parallax";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect } from "react";
+import { LetterSlide } from "components/Animations/TextAnimations";
 
 const AboutSection = () => {
   const router = useRouter();
   const { locale } = router;
   const pageContent = content[locale as keyof typeof content];
 
-  const title = useParallax({
-    speed: -20,
-    translateX: ["-100%", "100%"],
-  });
-
-  const texte = useParallax({
-    speed: 50,
-  });
-
-  // https://egghead.io/blog/how-to-animate-elements-when-in-view-on-scroll-with-framer-motion
   return (
     <div className={styles["about"]}>
       <div>
-        <h1
-          ref={title.ref as React.RefObject<HTMLDivElement>}
+        <LetterSlide
+          animateInView={true}
+          tag={"h1"}
+          text={pageContent.title}
           className="text-3d"
-        >
-          {pageContent.title}
-        </h1>
+        />
       </div>
-      <section
-        className={styles["texte"]}
-        ref={texte.ref as React.RefObject<HTMLDivElement>}
-      >
-        <ul className={styles["presentation"]}>
-          {pageContent.presentation.map(({ label, value }, index) => (
-            <li key={`presentation-${index}`}>
-              <p>{label}</p>
-              <p>{value}</p>
-            </li>
-          ))}
-        </ul>
+      <section className={styles["texte"]}>
+        <PresentationItems items={pageContent.presentation} />
         {/* <p>
           {pageContent.description.map((text, index) => (
             <React.Fragment key={index}>
@@ -52,6 +33,61 @@ const AboutSection = () => {
         </p> */}
       </section>
     </div>
+  );
+};
+
+type Props = {
+  items: any[];
+};
+
+const PresentationItems = ({ items }: Props) => {
+  const controls = useAnimation();
+  const ref = useRef() as React.RefObject<HTMLUListElement>;
+  const inView = useInView(ref);
+  const delay = 0.3;
+
+  const presentationVariants = {
+    label: {
+      hidden: { opacity: 0, x: -100 },
+      visible: { opacity: 1, x: 0 },
+    },
+    value: {
+      hidden: { opacity: 0, x: 100 },
+      visible: { opacity: 1, x: 0 },
+    },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.set("hidden");
+    }
+  }, [controls, inView]);
+
+  return (
+    <ul ref={ref} className={styles["presentation"]}>
+      {items.map(({ label, value }, index) => (
+        <React.Fragment key={`presentation-${index}`}>
+          <motion.li
+            variants={presentationVariants.label}
+            initial="hidden"
+            animate={controls}
+            transition={{ delay: delay * (index + 1) }}
+          >
+            <p>{label}</p>
+          </motion.li>
+          <motion.li
+            variants={presentationVariants.value}
+            initial="hidden"
+            animate={controls}
+            transition={{ delay: delay * (index + 1) }}
+          >
+            <p>{value}</p>
+          </motion.li>
+        </React.Fragment>
+      ))}
+    </ul>
   );
 };
 

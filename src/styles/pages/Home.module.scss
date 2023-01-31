@@ -1,25 +1,31 @@
-$titleSize: 130px;
+$titleSize: 110px;
 $subtitleSize: calc($titleSize / 1.8);
 $tinyTitleSize: calc($titleSize / 2.25);
 
-$bp1: 1100px;
-$bp1_titleSize: 110px;
+$bp1: 1408px;
+$bp1_titleSize: 100px;
 $bp1_subtitleSize: calc($bp1_titleSize / 1.8);
 $bp1_tinyTitleSize: calc($bp1_titleSize / 2.25);
 
-$bp2: 836px;
+$bp2: 1060px;
 $bp2_titleSize: 90px;
 $bp2_subtitleSize: calc($bp2_titleSize / 1.8);
 $bp2_tinyTitleSize: calc($bp2_titleSize / 2.25);
 
-$bp3: 572px;
+$bp3: 845px;
 $bp3_titleSize: 70px;
 $bp3_subtitleSize: calc($bp3_titleSize / 1.8);
 $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
 
+$bp4: 600px;
+$bp4_titleSize: 40px;
+$bp4_subtitleSize: calc($bp4_titleSize / 1.8);
+$bp4_tinyTitleSize: calc($bp4_titleSize / 2.25);
+
 .homepage {
   position: relative;
   display: flex;
+  height: 100vh;
 
   .homepage-content {
     position: relative;
@@ -31,9 +37,21 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
     margin: auto;
 
     img {
-      height: 70vh;
+      height: 600px;
       width: auto;
       cursor: pointer;
+
+      @media (max-width: $bp1) {
+        height: 400px;
+      }
+
+      @media (max-width: $bp2) {
+        height: 300px;
+      }
+
+      @media (max-width: $bp2) {
+        height: 200px;
+      }
     }
 
     .texte {
@@ -60,11 +78,43 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
         text-shadow: 2px 2px 2px $primaryAlt,
           3px 3px 5px rgba($color: #000000, $alpha: 0.5);
         font-style: italic;
+
+        @media (max-width: $bp1) {
+          font-size: $bp1_titleSize;
+        }
+
+        @media (max-width: $bp2) {
+          font-size: $bp2_titleSize;
+        }
+
+        @media (max-width: $bp3) {
+          font-size: $bp3_titleSize;
+        }
+
+        @media (max-width: $bp4) {
+          font-size: $bp4_titleSize;
+        }
       }
 
       h2 {
         font-size: $subtitleSize;
         font-style: italic;
+
+        @media (max-width: $bp1) {
+          font-size: $bp1_subtitleSize;
+        }
+
+        @media (max-width: $bp2) {
+          font-size: $bp2_subtitleSize;
+        }
+
+        @media (max-width: $bp3) {
+          font-size: $bp3_subtitleSize;
+        }
+
+        @media (max-width: $bp4) {
+          font-size: $bp4_subtitleSize;
+        }
       }
 
       .next-page {
@@ -76,77 +126,31 @@ $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
         &:hover {
           animation: none;
         }
-      }
-    }
-  }
 
-  @media (max-width: $bp1) {
-    .homepage-content {
-      .texte {
-        h1 {
-          font-size: $bp1_titleSize;
-        }
-
-        h2 {
-          font-size: $bp1_subtitleSize;
-        }
-
-        .next-page {
+        @media (max-width: $bp1) {
           font-size: $bp1_tinyTitleSize;
         }
-      }
-    }
-  }
 
-  @media (max-width: $bp2) {
-    .homepage-content {
-      flex-direction: column;
-      img {
-        width: 150px;
-        height: auto;
-      }
-
-      .texte {
-        display: flex;
-        align-items: center;
-        text-align: center;
-
-        h1 {
-          font-size: $bp2_titleSize;
-        }
-
-        h2 {
-          font-size: $bp2_subtitleSize;
-        }
-
-        .next-page {
+        @media (max-width: $bp2) {
           font-size: $bp2_tinyTitleSize;
         }
-      }
-    }
-  }
 
-  @media (max-width: $bp3) {
-    .homepage-content {
-      flex-direction: column;
-      .logo {
-        * {
-          width: 150px;
-          height: auto;
-        }
-      }
-      .texte {
-        h1 {
-          font-size: $bp3_titleSize;
-        }
-
-        h2 {
-          font-size: $bp3_subtitleSize;
-        }
-
-        .next-page {
+        @media (max-width: $bp3) {
           font-size: $bp3_tinyTitleSize;
         }
+
+        @media (max-width: $bp4) {
+          font-size: $bp4_tinyTitleSize;
+        }
+      }
+    }
+
+    @media (max-width: $bp2) {
+      flex-direction: column;
+
+      .texte {
+        align-items: center;
+        text-align: center;
       }
     }
   }

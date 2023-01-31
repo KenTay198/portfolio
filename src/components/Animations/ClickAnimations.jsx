@@ -21,6 +21,7 @@ export const ClickRotate = ({ children, ...props }) => {
       animate={controls}
       exit="exit"
       onClick={() => controls.start("animate")}
+      {...props}
     >
       {children}
     </motion.div>

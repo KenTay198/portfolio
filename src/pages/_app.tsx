@@ -5,9 +5,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-      <ParallaxProvider>
         <Component {...pageProps} />
-      </ParallaxProvider>
   );
 }
 

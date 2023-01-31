@@ -5,14 +5,10 @@ import { useRouter } from "next/router";
 import styles from "./Navbar.module.scss";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { AnimatedSlideDown } from "components/Animated/EnterAnimations";
+import { AnimateSlide } from "components/Animations/EnterAnimations";
 import Select from "components/StyledComponents/Select";
 
-interface Props {
-  mode?: String;
-}
-
-const Navbar = ({ mode }: Props) => {
+const Navbar = () => {
   const router = useRouter();
   const { locale, asPath } = router;
   const pageContent = content[locale as keyof typeof content];
@@ -29,6 +25,8 @@ const Navbar = ({ mode }: Props) => {
     return currentPath === pagePath;
   };
 
+  const toggleExpanded = () => setExpanded(!expanded);
+
   return (
     <nav className={styles["navbar"]}>
       <div className={styles["navbar-inner"]}>
@@ -40,7 +38,8 @@ const Navbar = ({ mode }: Props) => {
           {pageContent.navbar.map(({ path, label }, idx) => {
             const active = isActive(path);
             return (
-              <AnimatedSlideDown
+              <AnimateSlide
+                direction="down"
                 key={`nav-link${idx}`}
                 delay={animationDelay * idx}
                 className={`${styles["nav-item"]} ${styles["nav-link"]} ${
@@ -48,7 +47,7 @@ const Navbar = ({ mode }: Props) => {
                 }`}
               >
                 <Link href={path}>{label}</Link>
-              </AnimatedSlideDown>
+              </AnimateSlide>
             );
           })}
           <button
@@ -58,8 +57,14 @@ const Navbar = ({ mode }: Props) => {
             <FaTimes />
           </button>
         </div>
+        <AnimateSlide direction="down">
+          <button className={styles["navbar-toggler"]} onClick={toggleExpanded}>
+            <FaBars />
+          </button>
+        </AnimateSlide>
         <div className={styles["nav-actions"]}>
-          <AnimatedSlideDown
+          <AnimateSlide
+            direction="down"
             delay={animationDelay * pageContent.navbar.length}
             className={`${styles["language"]} ${styles["nav-item"]}`}
           >
@@ -82,7 +87,7 @@ const Navbar = ({ mode }: Props) => {
               value={locale}
               onChange={changeLanguage}
             />
-          </AnimatedSlideDown>
+          </AnimateSlide>
         </div>
       </div>
     </nav>
