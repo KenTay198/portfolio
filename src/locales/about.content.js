@@ -31,7 +31,7 @@ const content = {
       "I'm a french junior Full Stack developer.",
       "I discovered computer science during my first year of high school mainly with Python and basic HTML & CSS.",
       "During my 3 years of high school, I enjoyed more and more developing, to the point of wanting to make it my future profession.",
-      "Subsequently, I spent 2 years in IUT Lyon 1 where I was able to discovere all the specialities of computer science, and it was also during this period that I definitively chose web development thanks to a JavaScript course.",
+      "Subsequently, I spent 2 years in IUT Lyon 1 where I was able to discover all the specialities of computer science, and it was also during this period that I definitively chose web development thanks to a JavaScript course.",
       "After an internship that I did from April 2021 to July 2021 as a web developer at Elikya Academy, I joined the Ynov Lyon school to continue my learning of web development.",
     ],
   },

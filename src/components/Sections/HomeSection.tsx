@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "styles/pages/Home.module.scss";
 import Link from "next/link";
-import CasquetteBeige from "assets/images/casquette-beige.png";
+import CasquetteBeige from "images/logos/casquette-beige.png";
 import {
   AnimateRotate,
   AnimateSlide,

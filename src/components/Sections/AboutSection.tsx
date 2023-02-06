@@ -5,6 +5,8 @@ import styles from "styles/pages/About.module.scss";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { LetterSlide } from "components/Animations/TextAnimations";
+import Image from "next/image";
+import John from "images/photos/john.png";
 
 const AboutSection = () => {
   const router = useRouter();
@@ -13,24 +15,26 @@ const AboutSection = () => {
 
   return (
     <div className={styles["about"]}>
-      <div>
-        <LetterSlide
-          animateInView={true}
-          tag={"h1"}
-          text={pageContent.title}
-          className="text-3d"
-        />
-      </div>
-      <section className={styles["texte"]}>
+      <LetterSlide
+        animateInView={true}
+        tag={"h1"}
+        text={pageContent.title}
+        className="text-3d"
+      />
+      <section>
         <PresentationItems items={pageContent.presentation} />
-        {/* <p>
+      </section>
+      <section className={styles["description"]}>
+        <p>
           {pageContent.description.map((text, index) => (
             <React.Fragment key={index}>
               {text}
               <br />
             </React.Fragment>
           ))}
-        </p> */}
+        </p>
+
+        <Image src={John} alt="Photo de John-Kenneth" unoptimized />
       </section>
     </div>
   );
