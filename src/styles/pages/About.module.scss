@@ -52,22 +52,23 @@
 
   .description {
     background-color: $secondary;
-    color: $primary;
-    font-size: 25px;
-    display: flex;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
+    margin-top: 30px;
 
     p {
+      color: $primary;
       margin: 0;
-      padding: 10px 0 10px 10px;
-      width: 75%;
-      min-width: 400px;
+      padding: 10px;
+      text-align: justify;
+      font-size: 25px;
     }
 
     img {
       height: 400px;
       width: auto;
+      float: left;
+      shape-outside: circle();
+      margin-right: 20px;
+      margin-bottom: 20px;
     }
   }
 }

@@ -6,7 +6,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { LetterSlide } from "components/Animations/TextAnimations";
 import Image from "next/image";
-import John from "images/photos/john.png";
+import John from "images/photos/john_portrait_border_long.png";
 
 const AboutSection = () => {
   const router = useRouter();
@@ -25,6 +25,7 @@ const AboutSection = () => {
         <PresentationItems items={pageContent.presentation} />
       </section>
       <section className={styles["description"]}>
+        <Image src={John} alt="Photo de John-Kenneth" unoptimized />
         <p>
           {pageContent.description.map((text, index) => (
             <React.Fragment key={index}>
@@ -33,8 +34,6 @@ const AboutSection = () => {
             </React.Fragment>
           ))}
         </p>
-
-        <Image src={John} alt="Photo de John-Kenneth" unoptimized />
       </section>
     </div>
   );
