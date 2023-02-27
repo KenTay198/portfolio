@@ -18,13 +18,7 @@ export const LetterSlide = ({
   };
 
   useEffect(() => {
-    if (animateInView) {
-      if (inView) {
-        controls.start("visible");
-      } else {
-        controls.set("hidden");
-      }
-    }
+    if (animateInView && inView) controls.start("visible");
   }, [animateInView, controls, inView]);
 
   return (

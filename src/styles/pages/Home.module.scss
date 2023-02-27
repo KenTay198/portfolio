@@ -7,17 +7,17 @@ $bp1_titleSize: 100px;
 $bp1_subtitleSize: calc($bp1_titleSize / 1.8);
 $bp1_tinyTitleSize: calc($bp1_titleSize / 2.25);
 
-$bp2: 1060px;
-$bp2_titleSize: 90px;
+$bp2: 1206px;
+$bp2_titleSize: 75px;
 $bp2_subtitleSize: calc($bp2_titleSize / 1.8);
 $bp2_tinyTitleSize: calc($bp2_titleSize / 2.25);
 
-$bp3: 845px;
+$bp3: 888px;
 $bp3_titleSize: 70px;
 $bp3_subtitleSize: calc($bp3_titleSize / 1.8);
 $bp3_tinyTitleSize: calc($bp3_titleSize / 2.25);
 
-$bp4: 600px;
+$bp4: 696px;
 $bp4_titleSize: 40px;
 $bp4_subtitleSize: calc($bp4_titleSize / 1.8);
 $bp4_tinyTitleSize: calc($bp4_titleSize / 2.25);
@@ -37,7 +37,7 @@ $bp4_tinyTitleSize: calc($bp4_titleSize / 2.25);
     margin: auto;
 
     img {
-      height: 600px;
+      height: 550px;
       width: auto;
       cursor: pointer;
 
