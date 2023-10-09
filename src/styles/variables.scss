@@ -1,11 +1,7 @@
-@import "./animations.scss";
-
 $primary: #0b3142;
 $secondary: #ead1a9;
 $primaryAlt: #092937;
 $secondaryAlt: #e1bb80;
-$navbarHeight: 47px;
-$colorThemeToggleDuration: 0.5s;
 
 :export {
   primary: $primary;

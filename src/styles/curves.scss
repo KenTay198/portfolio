@@ -1,0 +1,9 @@
+.curves {
+  background-size: cover;
+  background-position: right;
+
+
+  &.curve-s-r {
+    background-image: url("/images/svg/curves-secondary-right.svg");
+  }
+}

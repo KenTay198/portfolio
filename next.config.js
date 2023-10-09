@@ -5,13 +5,6 @@ const nextConfig = {
   sassOptions: {
     prependData: `@import "./src/styles/variables.scss";`,
   },
-  i18n: {
-    locales: ["fr", "en"],
-    defaultLocale: "fr",
-  },
-  compiler: {
-    styledComponents: true,
-  },
 };
 
 module.exports = nextConfig;

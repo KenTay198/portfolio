@@ -1,0 +1,1 @@
+export type Template = "primary" | "primaryAlt" | "secondary" | "secondaryAlt" | "black"

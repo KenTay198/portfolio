@@ -16,15 +16,27 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "components/*" : ["src/components/*"],
-      "locales/*" : ["src/locales/*"],
-      "pages/*" : ["src/pages/*"],
-      "styles/*" : ["src/styles/*"],
-      "images/*" : ["public/images/*"],
-      "transitions/*" : ["src/transitions/*"],
-      "context/*" : ["src/context/*"],
-    }
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@dictionaries/*": ["src/dictionaries/*"],
+      "@utils/*": ["src/utils/*"],
+      "@images/*": ["public/images/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "***/**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "***/**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
