@@ -15,7 +15,7 @@ const homeContent: Record<string, IHomeContent> = {
       description:
         "Développeur full-stack junior de 20 ans ayant pour envie d'en apprendre toujours plus sur le monde du développement.",
     },
-    job: "Développeur Full-Stack Junior",
+    job: "Développeur Full-Stack junior français",
     nextPage: "Cliquez pour en savoir plus !",
     images: {
       logo: {
@@ -28,7 +28,7 @@ const homeContent: Record<string, IHomeContent> = {
       description:
         "20-year-old junior full-stack developer willing to learn more and more about the world of development.",
     },
-    job: "Junior Full-Stack Developer",
+    job: "French junior Full-Stack developer",
     nextPage: "Click for more information !",
     images: {
       logo: {

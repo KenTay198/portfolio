@@ -8,7 +8,7 @@ const layoutContent: Record<string, ILayoutContent> = {
   fr: {
     navbar: [
       { href: "/", label: "Accueil" },
-      { href: "/about", label: "À propos de moi" },
+      { href: "/journey", label: "Mon parcours" },
       { href: "/skills", label: "Compétences" },
       { href: "/experiences", label: "Expériences" },
       { href: "/contact", label: "Contact" },
@@ -18,7 +18,7 @@ const layoutContent: Record<string, ILayoutContent> = {
   en: {
     navbar: [
       { href: "/", label: "Home" },
-      { href: "/about", label: "About me" },
+      { href: "/journey", label: "My journey" },
       { href: "/skills", label: "Skills" },
       { href: "/experiences", label: "Experiences" },
       { href: "/contact", label: "Contact" },

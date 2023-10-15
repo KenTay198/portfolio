@@ -34,8 +34,14 @@ export default function LocaleSwitcher() {
       >
         {i18n.locales.map((locale) => {
           return (
-            <li className="text-primary bg-secondary px-2 font-bold text-xl duration-200 hover:brightness-75" key={locale}>
-              <Link href={redirectedPathName(locale)}>
+            <li
+              className="text-primary bg-secondary px-2 font-bold text-xl duration-200 hover:brightness-75"
+              key={locale}
+            >
+              <Link
+                onClick={() => setExpanded(false)}
+                href={redirectedPathName(locale)}
+              >
                 {localeLabel[locale]}
               </Link>
             </li>

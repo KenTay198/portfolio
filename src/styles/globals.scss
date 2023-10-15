@@ -19,8 +19,13 @@ body {
   scroll-behavior: smooth;
   background-color: $primary;
   color: $secondary;
+  font-size: 20px;
 
-  @media (max-width: 350px) {
+  &.modal-open {
+    overflow: hidden;
+  }
+
+  @media (max-width: 300px) {
     * {
       overflow-wrap: break-word;
       word-break: break-word;
@@ -53,6 +58,8 @@ h2 {
 }
 
 h1 {
+  font-weight: bold;
+  color: $secondaryAlt;
   font-size: 70px;
 }
 
