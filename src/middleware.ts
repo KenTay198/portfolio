@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  if (!pathname.startsWith("/images") && pathnameIsMissingLocale) {
+  if (!pathname.startsWith("/images") && !pathname.startsWith("/documents") && pathnameIsMissingLocale) {
     const locale = getLocale(request);
     return NextResponse.redirect(
       new URL(

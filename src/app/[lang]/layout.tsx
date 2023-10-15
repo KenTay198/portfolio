@@ -1,7 +1,6 @@
 import "@styles/globals.scss";
+import Layout from "@components/layouts/layout/Layout";
 import { i18n } from "src/i18n.config";
-import "react-toastify/dist/ReactToastify.css";
-import LoadingProvider from "src/context/LoadingContext";
 
 export const metadata = {
   title: "John-Kenneth TAYLOR AFONAH",
@@ -16,11 +15,5 @@ export default function RootLayout({
 }) {
   const lang = params.lang ?? i18n.defaultLocale;
 
-  return (
-    <html lang={lang}>
-      <body>
-        <LoadingProvider>{children}</LoadingProvider>
-      </body>
-    </html>
-  );
+  return <Layout lang={lang}>{children}</Layout>;
 }
