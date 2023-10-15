@@ -1,5 +1,4 @@
 interface ISkillsContent {
-  meta: { description: string };
   title: string;
   notationModal: {
     title: string;
@@ -13,10 +12,6 @@ interface ISkillsContent {
 
 const skillsContent: Record<string, ISkillsContent> = {
   fr: {
-    meta: {
-      description:
-        "Développeur full-stack junior de 20 ans ayant pour envie d'en apprendre toujours plus sur le monde du développement.",
-    },
     title: "MES COMPÉTENCES",
     notationModal: {
       title: "Notation",
@@ -88,10 +83,6 @@ const skillsContent: Record<string, ISkillsContent> = {
     ]
   },
   en: {
-    meta: {
-      description:
-        "20-year-old junior full-stack developer willing to learn more and more about the world of development.",
-    },
     title: "MY SKILLS",
     notationModal: {
       title: "Notation",
