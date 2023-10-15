@@ -5,6 +5,7 @@ const nextConfig = {
   sassOptions: {
     prependData: `@import "./src/styles/variables.scss";`,
   },
+  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
