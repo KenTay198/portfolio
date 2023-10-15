@@ -30,12 +30,12 @@ function Button({
         break;
       case "secondary":
         classNames.push(
-          "border-secondary text-secondary before:bg-secondary hover:text-primary"
+          "border-secondary text-secondary bg-primary before:bg-secondary hover:text-primary"
         );
         break;
       case "secondaryAlt":
         classNames.push(
-          "border-secondaryAlt text-secondaryAlt before:bg-secondaryAlt hover:text-primary"
+          "border-secondaryAlt text-secondaryAlt bg-primary before:bg-secondaryAlt hover:text-primary"
         );
 
         break;
