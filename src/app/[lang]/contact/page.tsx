@@ -1,10 +1,9 @@
 "use client";
-
-import Button from "@atoms/Button";
-import { Input, Textarea } from "@atoms/Inputs";
+import Button from "@components/shared/atoms/Button";
+import { Input, Textarea } from "@components/shared/atoms/Inputs";
 import contactContent from "@dictionaries/contact.content";
 import { isValidEmail, isValidPhone } from "@utils/functions";
-import { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import { useLoadingState } from "src/context/LoadingContext";

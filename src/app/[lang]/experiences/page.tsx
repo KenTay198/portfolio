@@ -3,6 +3,7 @@ import experiencesContent, {
   IExperience,
 } from "@dictionaries/experiences.content";
 import { FaSchool, FaSuitcase } from "react-icons/fa";
+import React from "react";
 
 function Experiences({ params }: { params: { lang: string } }) {
   const dictionary = experiencesContent[params.lang];

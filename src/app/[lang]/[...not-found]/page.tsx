@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Notfound from "@images/svg/404.svg";
 import notFoundContent from "@dictionaries/not-found.content";

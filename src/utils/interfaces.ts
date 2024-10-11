@@ -1,1 +1,7 @@
-export type Template = "primary" | "primaryAlt" | "secondary" | "secondaryAlt" | "black"
+export type Template =
+  | "primary"
+  | "primaryDark"
+  | "secondary"
+  | "accent"
+  | "accentDark"
+  | "black";

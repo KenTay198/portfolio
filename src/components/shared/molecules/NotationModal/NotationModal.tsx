@@ -1,3 +1,4 @@
+import React from "react";
 import Modal from "@molecules/Modal/Modal";
 import { FaStar } from "react-icons/fa";
 

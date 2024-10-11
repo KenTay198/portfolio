@@ -1,3 +1,4 @@
+import React from "react";
 import cvContent from "@dictionaries/cv.content";
 
 function CV({ params }: { params: { lang: string } }) {

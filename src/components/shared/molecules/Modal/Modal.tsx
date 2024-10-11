@@ -1,4 +1,4 @@
-import Button from "@atoms/Button";
+import Button from "@components/shared/atoms/Button";
 import React, { useEffect, useRef } from "react";
 
 export interface IModalAction {
