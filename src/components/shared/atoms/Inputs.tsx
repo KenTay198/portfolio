@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, InputHTMLAttributes } from "react";
 import autosize from "autosize";
 
 interface IProps {
@@ -14,7 +14,7 @@ export const Input = ({
   error,
   errorMessage,
   ...props
-}: IProps & React.InputHTMLAttributes<HTMLInputElement>) => {
+}: IProps & InputHTMLAttributes<HTMLInputElement>) => {
   return (
     <div>
       {label && (
@@ -47,7 +47,7 @@ export const Textarea = ({
   error,
   errorMessage,
   ...props
-}: IProps & React.InputHTMLAttributes<HTMLTextAreaElement>) => {
+}: IProps & InputHTMLAttributes<HTMLTextAreaElement>) => {
   const ref = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
