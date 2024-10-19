@@ -45,7 +45,7 @@ function Layout({ children, lang, className }: IProps) {
 
         <Header lang={lang} />
 
-        <div className="relative pt-24 min-h-full">{children}</div>
+        <div className="relative pt-24 min-h-full overflow-hidden">{children}</div>
         <Footer />
       </div>
     </ReactLenis>

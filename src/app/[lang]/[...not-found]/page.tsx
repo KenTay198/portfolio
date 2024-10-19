@@ -16,8 +16,8 @@ function NotFound({ params }: IProps) {
   return (
     <div className="flex flex-col items-center justify-center max-w-[1000px] mx-auto text-center">
       <Image src={Notfound} alt="Styled 404" />
-      <h2 className="text-5xl font-bold">{dictionary?.title}</h2>
-      <p className="text-2xl">{dictionary?.text}</p>
+      <h2 className="text-5xl font-bold">{dictionary.title}</h2>
+      <p className="text-2xl">{dictionary.text}</p>
     </div>
   );
 }

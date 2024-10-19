@@ -67,40 +67,66 @@ h1,
 .h1 {
   font-weight: bold;
   font-size: 72px;
-  line-height: 87.8px;
+  line-height: calc(72px * 1.22);
+  margin-bottom: 8px;
 
   @media (max-width: $bp_tablet) {
     font-size: 42px;
-    line-height: 51.2px;
+    line-height: calc(42px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 36px;
+    line-height: calc(36px * 1.22);
   }
 }
 
 h2,
 .h2 {
   font-size: 42px;
-  line-height: 51.2px;
+  line-height: calc(42px * 1.22);
 
   @media (max-width: $bp_tablet) {
     font-size: 30px;
-    line-height: 36.6px;
+    line-height: calc(30px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 24px;
+    line-height: calc(24px * 1.22);
   }
 }
 
 h3,
 .h3 {
   font-size: 30px;
-  line-height: 36.6px;
+  line-height: calc(30px * 1.22);
 
   @media (max-width: $bp_tablet) {
     font-size: 24px;
-    line-height: 29.3px;
+    line-height: calc(24px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 20px;
+    line-height: calc(20px * 1.22);
   }
 }
 
 h4,
 .h4 {
   font-size: 24px;
-  line-height: 29.3px;
+  line-height: calc(24px * 1.22);
+
+  @media (max-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: calc(20px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 18px;
+    line-height: calc(18px * 1.22);
+  }
 }
 
 .error {

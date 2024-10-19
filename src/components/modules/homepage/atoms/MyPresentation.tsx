@@ -38,7 +38,7 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
         className="flex gap-[120px] flex-wrap justify-center items-center px-3 mx-auto py-[105px]"
       >
         <div className="max-w-[800px]">
-          <h1 className="text-accent">
+          <h1 className="text-accent mb-0">
             JOHN-KENNETH
             <br />
             TAYLOR AFONAH

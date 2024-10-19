@@ -5,7 +5,7 @@ import React, { HTMLAttributes } from "react";
 import { useDarkModeState } from "src/context/DarkModeContext";
 import { useLocaleState } from "src/context/LocaleContext";
 import projectsDatas from "@datas/projects";
-import ProjectCard from "@components/modules/projects/atoms/ProjectCard";
+import ProjectCard from "@modules/projects/atoms/ProjectCard";
 
 const MyProjects = ({
   className,
@@ -23,7 +23,7 @@ const MyProjects = ({
         className,
       ].join(" ")}
     >
-      <h2 className="text-center font-bold mb-[30px] text-black dark:text-secondary relative z-[1] px-5 pt-[140px]">
+      <h2 className="text-center font-bold mb-[30px] relative z-[1] px-5 pt-[140px]">
         {projects.title}
       </h2>
 

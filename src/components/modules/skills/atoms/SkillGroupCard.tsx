@@ -49,11 +49,11 @@ const SkillCard = ({ skill, ...props }: ISkillCardProps) => {
   return (
     <li {...props} className="flex items-center gap-2">
       <p className="h4 font-bold flex-1">{label}</p>
-      <div className="flex text-accent dark:text-primary">
+      <div className="flex text-accent dark:text-primary text-[30px] max-[380px]:text-[18px] max-[500px]:text-[22px]">
         {Array.from(new Array(Math.floor(value)).keys()).map((i) => (
-          <FaStar size={30} key={`skill-${name}-star-${i}`} />
+          <FaStar key={`skill-${name}-star-${i}`} />
         ))}
-        {hasHalf && <FaStarHalfAlt size={30} />}
+        {hasHalf && <FaStarHalfAlt />}
       </div>
     </li>
   );

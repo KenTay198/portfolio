@@ -5,7 +5,7 @@ import NotationModal from "@components/shared/molecules/NotationModal/NotationMo
 import React, { useMemo } from "react";
 import { useState } from "react";
 import { FaInfo, FaTimes } from "react-icons/fa";
-import SkillGroupCard from "@components/modules/skills/atoms/SkillGroupCard";
+import SkillGroupCard from "@modules/skills/atoms/SkillGroupCard";
 import { useDarkModeState } from "src/context/DarkModeContext";
 
 function Skills({ params }: { params: { lang: string } }) {
@@ -22,8 +22,8 @@ function Skills({ params }: { params: { lang: string } }) {
   return (
     <>
       <div className="pb-24 px-5">
-        <h1 className="text-black dark:text-secondary text-center">
-          {dictionary?.title}
+        <h1 className="text-center max-[410px]:break-words">
+          {dictionary.title}
         </h1>
 
         <section className="flex justify-center mx-auto gap-[105px]">

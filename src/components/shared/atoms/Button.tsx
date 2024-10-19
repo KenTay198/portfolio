@@ -8,6 +8,7 @@ interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
   href?: string;
   Icon?: IconType;
   type?: "filled" | "outlined";
+  target?: string;
 }
 
 function Button({
@@ -17,6 +18,7 @@ function Button({
   className,
   Icon,
   type = "outlined",
+  target,
   ...props
 }: IProps) {
   const getClassName = () => {
@@ -69,7 +71,7 @@ function Button({
 
   if (href)
     return (
-      <Link href={href}>
+      <Link href={href} target={target}>
         <button className={getClassName()} {...props}>
           <span className="relative z-[1]">{children}</span>
         </button>

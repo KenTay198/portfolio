@@ -75,7 +75,7 @@ const Modal = ({
         </div>
         {actions && (
           <div className="flex gap-2 justify-end">
-            {actions.map(({ name, label, onClick, color }, index) => (
+            {actions.map(({ name, label, onClick, color }) => (
               <Button
                 key={name}
                 template="secondary"

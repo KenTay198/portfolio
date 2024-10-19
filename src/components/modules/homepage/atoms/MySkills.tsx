@@ -72,7 +72,7 @@ const MySkills = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
           placement: { bottom: -87, left: -126 },
         }}
       >
-        <h2 className="text-center font-bold mb-[30px] text-secondary relative z-[1] px-5 pt-[140px]">
+        <h2 className="text-center font-bold mb-[30px] text-white relative z-[1] px-5 pt-[140px]">
           {skills.title}
         </h2>
 
