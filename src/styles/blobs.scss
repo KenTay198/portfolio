@@ -1,0 +1,67 @@
+.blob {
+  overflow: hidden;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.blob-1-primary {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-1-primary-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-1-primary-outlined.png");
+    }
+  }
+
+  &.blob-1-accent {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-1-accent-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-1-accent-outlined.png");
+    }
+  }
+
+  &.blob-1-secondary {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-1-secondary-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-1-secondary-outlined.png");
+    }
+  }
+
+  &.blob-2-primary {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-2-primary-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-2-primary-outlined.png");
+    }
+  }
+
+  &.blob-2-accent {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-2-accent-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-2-accent-outlined.png");
+    }
+  }
+
+  &.blob-2-secondary {
+    &.blob-outlined {
+      background-image: url("../assets/blobs/blob-2-secondary-outlined.png");
+    }
+
+    &.blob-filled {
+      background-image: url("../assets/blobs/blob-2-secondary-outlined.png");
+    }
+  }
+}

@@ -16,14 +16,18 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@atoms/*": ["src/components/atoms/*"],
-      "@molecules/*": ["src/components/molecules/*"],
-      "@organisms/*": ["src/components/organisms/*"],
-      "@components/*": ["src/components/*"],
-      "@styles/*": ["src/styles/*"],
-      "@dictionaries/*": ["src/dictionaries/*"],
-      "@utils/*": ["src/utils/*"],
-      "@images/*": ["public/images/*"]
+      "@atoms/*": ["./src/components/shared/atoms/*"],
+      "@molecules/*": ["./src/components/shared/molecules/*"],
+      "@organisms/*": ["./src/components/shared/organisms/*"],
+      "@shared/*": ["./src/components/shared/*"],
+      "@modules/*": ["./src/components/modules/*"],
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@dictionaries/*": ["./src/dictionaries/*"],
+      "@datas/*": ["./src/datas/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@images/*": ["public/images/*"],
+      "@icons/*": ["public/icons/*"]
     },
     "plugins": [
       {

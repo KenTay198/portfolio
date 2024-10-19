@@ -1,13 +1,13 @@
 "use client";
-
-import Button from "@atoms/Button";
-import { Input, Textarea } from "@atoms/Inputs";
+import Button from "@components/shared/atoms/Button";
 import contactContent from "@dictionaries/contact.content";
 import { isValidEmail, isValidPhone } from "@utils/functions";
-import { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import { useLoadingState } from "src/context/LoadingContext";
+import TextInput from "@atoms/Inputs/TextInput";
+import TextareaInput from "@atoms/Inputs/TextreaInput";
 
 export interface IFormData {
   firstName?: string;
@@ -99,7 +99,7 @@ function Contact({ params }: { params: { lang: string } }) {
     <div>
       <h1>{dictionary.title}</h1>
       <div className="flex flex-col gap-3">
-        <Input
+        <TextInput
           required
           onKeyDown={() => handleKeyPress("firstName")}
           id="firstName"
@@ -108,7 +108,7 @@ function Contact({ params }: { params: { lang: string } }) {
           value={formData.firstName ?? ""}
           onChange={(e) => handleChange("firstName", e.target.value)}
         />
-        <Input
+        <TextInput
           required
           onKeyDown={() => handleKeyPress("lastName")}
           id="lastName"
@@ -117,7 +117,7 @@ function Contact({ params }: { params: { lang: string } }) {
           value={formData.lastName ?? ""}
           onChange={(e) => handleChange("lastName", e.target.value)}
         />
-        <Input
+        <TextInput
           required
           onKeyDown={() => handleKeyPress("email")}
           id="email"
@@ -127,7 +127,7 @@ function Contact({ params }: { params: { lang: string } }) {
           placeholder="example@email.fr"
           onChange={(e) => handleChange("email", e.target.value)}
         />
-        <Input
+        <TextInput
           required
           onKeyDown={() => handleKeyPress("phone")}
           id="phone"
@@ -137,7 +137,7 @@ function Contact({ params }: { params: { lang: string } }) {
           placeholder="06xxxxxxxx"
           onChange={(e) => handleChange("phone", e.target.value)}
         />
-        <Input
+        <TextInput
           required
           onKeyDown={() => handleKeyPress("object")}
           id="object"
@@ -146,7 +146,7 @@ function Contact({ params }: { params: { lang: string } }) {
           value={formData.object ?? ""}
           onChange={(e) => handleChange("object", e.target.value)}
         />
-        <Textarea
+        <TextareaInput
           required
           onKeyDown={() => handleKeyPress("message")}
           id="message"
