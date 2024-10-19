@@ -12,7 +12,7 @@ const Footer = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
     <div {...props} className="bg-primary text-white px-5 py-5">
       <div className="flex flex-col gap-[30px] mx-auto max-w-[1700px]">
         <div className="flex flex-wrap justify-between items-center max-[940px]:flex-col-reverse">
-          <SocialNetworks withPhone className="justify-center" />
+          <SocialNetworks withPhone darkBg className="justify-center" />
           <div className="flex flex-wrap p-2.5 gap-2.5 max-[450px]:flex-col max-[450px]:text-center">
             {dictionary.navbar.map(({ label, href }) => (
               <Link

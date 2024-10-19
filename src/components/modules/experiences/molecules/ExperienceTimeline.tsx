@@ -52,7 +52,7 @@ const ExperienceTimeline = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
 
           return (
             <tr key={key}>
-              <td className="align-top relative border-r-2 border-accent after:absolute after:right-0 after:top-0 after:w-5 after:h-5 after:bg-secondary dark:after:bg-primary after:border-accent after:border-[2px] after:rounded-full after:translate-x-[calc(50%+1px)]">
+              <td className="align-top relative border-r-2 border-accent after:absolute after:right-0 after:top-0 after:w-5 after:h-5 after:duration-150 after:bg-secondary dark:after:bg-primary after:border-accent after:border-[2px] after:rounded-full after:translate-x-[calc(50%+1px)]">
                 {school && (
                   <ExperienceCell
                     {...school}
@@ -111,7 +111,9 @@ const CategoryHeader = ({
       <div className="p-3 bg-accent text-primary w-fit h-fit rounded-full">
         <Icon size={30} />
       </div>
-      <p className={`h3 text-accent ${selected ? "" : "max-[600px]:hidden"}`}>{label}</p>
+      <p className={`h3 text-accent ${selected ? "" : "max-[600px]:hidden"}`}>
+        {label}
+      </p>
     </div>
   );
 };

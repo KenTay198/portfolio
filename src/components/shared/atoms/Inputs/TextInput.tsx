@@ -20,7 +20,7 @@ const TextInput = ({
   return (
     <InputWrapper {...wrapperProps}>
       <input
-        className={`bg-primaryAlt p-2 shadow-md rounded-md w-full text-white ${
+        className={`bg-primaryAlt p-2 shadow-md rounded-md w-full text-black ${
           error ? "error" : ""
         }`}
         {...props}

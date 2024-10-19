@@ -6,6 +6,7 @@ import CheckboxGroup from "@atoms/Inputs/CheckboxGroup";
 
 export interface IProjectsFilters {
   technos?: string[];
+  types?: string[];
 }
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
@@ -19,6 +20,11 @@ const ProjectsFilters = ({ filters, handleChange, ...props }: IProps) => {
       (t) => ({ value: t, label: t })
     ),
   ];
+  const types = [
+    { value: "Full-Stack", label: "Full-Stack" },
+    { value: "Front", label: "Front" },
+    { value: "Back", label: "Back" },
+  ];
 
   const { technos } = filters;
 
@@ -27,7 +33,7 @@ const ProjectsFilters = ({ filters, handleChange, ...props }: IProps) => {
   };
 
   return (
-    <div {...props} className="mb-5">
+    <div {...props} className="mb-5 flex flex-wrap gap-2">
       <FilterElement label="Technologies" value={technos?.join(", ")}>
         <CheckboxGroup
           id="technologies"
@@ -35,6 +41,16 @@ const ProjectsFilters = ({ filters, handleChange, ...props }: IProps) => {
           className="mr-2"
           value={technos || []}
           handleChange={(values) => handleFiltersChange("technos", values)}
+        />
+      </FilterElement>
+      <FilterElement label="Type" value={filters.types?.join(", ")}>
+        <CheckboxGroup
+          id="types"
+          options={types}
+          divClassName="w-[100px]"
+          className="mr-2"
+          value={filters.types || []}
+          handleChange={(values) => handleFiltersChange("types", values)}
         />
       </FilterElement>
     </div>

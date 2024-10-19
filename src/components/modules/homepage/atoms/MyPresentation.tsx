@@ -35,7 +35,7 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
           placement: { bottom: -129, left: -161 },
           className: "max-[1700px]:hidden",
         }}
-        className="flex gap-[120px] flex-wrap justify-center items-center px-3 mx-auto py-[105px]"
+        className="flex gap-[120px] flex-wrap justify-center items-center px-3 mx-auto py-[50px] lg:py-[105px]"
       >
         <div className="max-w-[800px]">
           <h1 className="text-accent mb-0">

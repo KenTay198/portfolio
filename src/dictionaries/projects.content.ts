@@ -14,6 +14,9 @@ export interface IProjectDescription {
 
 interface IProjectsContent {
   title: string;
+  meta: {
+    description: string;
+  };
   goToSite: string;
   titles: {
     skills: string;
@@ -30,12 +33,19 @@ interface IProjectsContent {
     elikya: IProjectDescription;
     gamerhub: IProjectDescription;
     elikya_formations: IProjectDescription;
+    channy: IProjectDescription;
+    bantudojo: IProjectDescription;
+    extranet: IProjectDescription;
+    elikya_admin: IProjectDescription;
   };
 }
 
 const projectsContent: Record<string, IProjectsContent> = {
   fr: {
     title: "MES PROJETS",
+    meta : {
+      description : "Consultez la liste des projets que j'ai réalisé, en groupe ou individuellement !" 
+    },
     goToSite: "Visiter le site",
     projects: {
       elikya: {
@@ -119,6 +129,77 @@ const projectsContent: Record<string, IProjectsContent> = {
           others: ["Axios"],
         },
       },
+      channy: {
+        description: "Un site vitrine pour l'association Channy Dance & Music.",
+        skills: [
+          "Développement individuel",
+          "Création du design",
+          "Optimisation SEO",
+          "Architecture atomique",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+        },
+      },
+      bantudojo: {
+        description: "Un site vitrine pour l'association Bantu Dojo Warriors.",
+        skills: [
+          "Développement individuel",
+          "Création du design",
+          "Optimisation SEO",
+          "Architecture atomique",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+        },
+      },
+      extranet: {
+        description:
+          "L'extranet est une application web interne qui gère les cours des différentes branches d'Elikya Academy. À partir de la plateforme, l'équipe peut gérer les emplois du temps et les professeurs, faire des factures, faire l'appel, ...",
+        skills: [
+          "Développement individuel",
+          "Création du design",
+          "Système d'authentification sur-mesure",
+          "Récupération de données depuis une API",
+          "Manipulation de données",
+          "Génération de factures",
+          "Gestion de base de données",
+          "Formulaires",
+          "Architecture atomique",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+          others: ["Axios"],
+        },
+      },
+      elikya_admin: {
+        description:
+          "Cet application est un back-office qui permet à l'équipe Elikya Academy de de gérer des contenus sur les différents sites Internet. Ils ont également accès à d'autres outils comme un générateur de facture, un outil pour gérer des locations, ...",
+        skills: [
+          "Développement individuel",
+          "Création du design",
+          "Système d'authentification sur-mesure",
+          "Récupération de données depuis une API",
+          "Manipulation de données",
+          "Génération de factures",
+          "Gestion de base de données",
+          "Formulaires",
+          "Emails automatiques",
+          "Architecture atomique",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+          others: ["Axios"],
+        },
+      },
     },
     titles: {
       skills: "Compétences mobilisées",
@@ -134,6 +215,9 @@ const projectsContent: Record<string, IProjectsContent> = {
   },
   en: {
     title: "MY PROJECTS",
+    meta : {
+      description : "See the list of all the projects I have done, in groups or alone !" 
+    },
     goToSite: "Visit website",
     projects: {
       elikya: {
@@ -208,6 +292,77 @@ const projectsContent: Record<string, IProjectsContent> = {
           "Customised registration system linked to automated emails",
           "Customised contact form linked to automated emails",
           "Customised search bar",
+          "Atomic design",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+          others: ["Axios"],
+        },
+      },
+      channy: {
+        description: "A website for the association Channy Dance & Music.",
+        skills: [
+          "Individual development",
+          "Design creation",
+          "SEO optimisation",
+          "Atomic design",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+        },
+      },
+      bantudojo: {
+        description: "A website for the association Bantu Dojo Warriors.",
+        skills: [
+          "Individual development",
+          "Design creation",
+          "SEO optimisation",
+          "Atomic design",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+        },
+      },
+      extranet: {
+        description:
+          "This extranet is an internal web app which allows Elikya Academy team to manage their courses. On this platform, the team can handle timetables and teachers, generate invoices, take attendance, ...",
+        skills: [
+          "Individual development",
+          "Design creation",
+          "Customised authentication system",
+          "Data fetching from an API",
+          "Data manipulation",
+          "Invoice generation",
+          "Database management",
+          "Forms",
+          "Atomic design",
+        ],
+        technos: {
+          language: ["TypeScript"],
+          frameworks: ["NextJS", "ReactJS"],
+          style: ["Sass", "TailwindCSS", "Styled components"],
+          others: ["Axios"],
+        },
+      },
+      elikya_admin: {
+        description:
+          "This app is a back-office chichs allows Elikya Academy team to manage some contents on their websites. They also have access to several tools such as an invoice generator, a tool to manage locations, ...",
+        skills: [
+          "Individual development",
+          "Design creation",
+          "Customised authentication system",
+          "Data fetching from an API",
+          "Data manipulation",
+          "Invoice generation",
+          "Database management",
+          "Forms",
+          "Automatic emails",
           "Atomic design",
         ],
         technos: {

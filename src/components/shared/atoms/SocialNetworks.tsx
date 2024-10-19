@@ -11,9 +11,10 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
   withPhone?: boolean;
+  darkBg? : boolean;
 }
 
-const SocialNetworks = ({ className, withPhone, ...props }: IProps) => {
+const SocialNetworks = ({ className, withPhone, darkBg, ...props }: IProps) => {
   const [mailOpened, setMailOpened] = useState(false);
   const [phoneOpened, setPhoneOpened] = useState(false);
   const { darkMode } = useDarkModeState();
@@ -21,7 +22,7 @@ const SocialNetworks = ({ className, withPhone, ...props }: IProps) => {
   return (
     <div
       {...props}
-      className={["flex flex-wrap items-center gap-2", className].join(" ")}
+      className={["flex w-fit flex-wrap items-center gap-2", className].join(" ")}
     >
       <Link
         href="https://github.com/KenTay198"
@@ -29,7 +30,7 @@ const SocialNetworks = ({ className, withPhone, ...props }: IProps) => {
         className="duration-150 hover:scale-110"
       >
         <Image
-          src={darkMode ? GithubWhite : Github}
+          src={darkMode || darkBg ? GithubWhite : Github}
           title="Github"
           alt="Github icon"
           width={40}
