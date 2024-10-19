@@ -1,9 +1,9 @@
-interface IAboutContent {
+interface INotFoundContent {
   title: string;
   text: string;
 }
 
-const notFoundContent: Record<string, IAboutContent> = {
+const notFoundContent: Record<string, INotFoundContent> = {
   fr: {
     title: "Cette page est introuvable",
     text: "La page que vous recherchez n'existe pas. Nous vous prions de retourner sur la page d'accueil en cliquant sur le bouton ci-dessous.",

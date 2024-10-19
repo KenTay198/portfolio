@@ -43,7 +43,7 @@ const NavLinks = ({ expanded, lang, setExpanded, ...props }: IProps) => {
     <ul
       {...props}
       ref={menuRef}
-      className={`flex gap-2 duration-200 overflow-hidden relative max-[1000px]:bg-primary/30 max-[100px]:rounded-lg max-[1000px]:flex-col max-[1000px]:fixed max-[1000px]:right-0 max-[1000px]:top-[105%] max-[1000px]:z-10 max-[1000px]:w-full max-[1000px]:h-fit max-[1000px]:max-h-screen max-[1000px]:py-2  ${
+      className={`flex gap-2 duration-200 overflow-hidden relative max-[1000px]:bg-primary/60 max-[100px]:rounded-lg max-[1000px]:flex-col max-[1000px]:fixed max-[1000px]:right-0 max-[1000px]:top-[105%] max-[1000px]:z-10 max-[1000px]:w-full max-[1000px]:h-fit max-[1000px]:max-h-screen max-[1000px]:py-2  ${
         expanded
           ? "max-[1000px]:px-2 max-[1000px]:max-w-[200px]"
           : "max-[1000px]:max-w-0"
@@ -100,7 +100,11 @@ const NavLink = ({ expanded, link, lang, ...props }: INavLinkProps) => {
   };
 
   return (
-    <Link {...props} href={`/${lang}/${href}`}>
+    <Link
+      {...props}
+      href={href.startsWith("http") ? href : `/${lang}/${href}`}
+      target={href.endsWith(".pdf") ? "_blank" : ""}
+    >
       <div className={getClassName()}>
         <Icon
           className={`max-[1000px]:whitespace-nowrap ${

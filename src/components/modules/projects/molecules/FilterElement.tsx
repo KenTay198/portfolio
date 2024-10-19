@@ -6,9 +6,17 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   value: any;
   children: React.ReactNode;
+  windowClassName?: string;
 }
 
-const FilterElement = ({ label, value, children, ...props }: IProps) => {
+const FilterElement = ({
+  label,
+  value,
+  children,
+  windowClassName,
+  className,
+  ...props
+}: IProps) => {
   const [expanded, setExpanded] = useState(false);
   const ExpandIcon = expanded ? VscTriangleRight : VscTriangleDown;
 
@@ -40,7 +48,11 @@ const FilterElement = ({ label, value, children, ...props }: IProps) => {
   }, [expanded, setExpanded]);
 
   return (
-    <div {...props} ref={menuRef} className="relative w-fit">
+    <div
+      {...props}
+      ref={menuRef}
+      className={["relative w-fit", className].join(" ")}
+    >
       <div
         className="flex gap-1 items-center cursor-pointer p-2 rounded-lg bg-primary text-secondary dark:bg-secondary dark:text-black"
         onClick={() => setExpanded(!expanded)}
@@ -50,7 +62,12 @@ const FilterElement = ({ label, value, children, ...props }: IProps) => {
         <ExpandIcon />
       </div>
       {expanded && (
-        <div className="absolute top-[110%] left-0 z-[2] p-2 rounded-lg bg-primary text-secondary dark:bg-secondary dark:text-black">
+        <div
+          className={[
+            "absolute top-[110%] left-0 z-[2] p-2 rounded-lg bg-primary text-secondary dark:bg-secondary dark:text-black",
+            windowClassName,
+          ].join(" ")}
+        >
           {children}
         </div>
       )}

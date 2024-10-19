@@ -9,7 +9,7 @@ export const Spinner = ({ size = 256 }: IProps) => {
     <div className="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2 ">
       <div
         style={{ width: `${size}px`, height: `${size}px` }}
-        className="border-t-transparent border-solid animate-spin rounded-full border-primary border-8 h-64 w-64"
+        className="border-t-transparent border-solid animate-spin rounded-full border-primary dark:border-accent border-8 h-64 w-64"
       ></div>
     </div>
   );

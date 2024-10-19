@@ -1,7 +1,7 @@
+import { IFormData } from "@modules/contact/organisms/ContactForm";
 import { capitalize } from "@utils/functions";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
-import { IFormData } from "src/app/[lang]/contact/page";
 
 const getNodemailer = () => {
   const transport = nodemailer.createTransport({
@@ -37,6 +37,7 @@ export const POST = async (req: Request) => {
       to: process.env.NODEMAILER_EMAIL,
       subject: `Formulaire de contact : ${object}`,
       text: `
+      Un message est arrivé du portfolio !
       NOM & Prénom : ${lastName?.toUpperCase()} ${capitalize(firstName ?? "")}
       Adresse e-mail : ${email}
       Numéro de téléphone : ${phone}

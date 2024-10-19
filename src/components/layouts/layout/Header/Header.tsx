@@ -14,7 +14,7 @@ function Header({ lang }: { lang: string }) {
   const ExpandIcon = isExpanded ? FaTimes : FaBars;
 
   return (
-    <div className="fixed top-0 left-0 flex justify-between items-center w-full max-w-screen px-2 py-1 h-24 z-10 bg-secondary/50 dark:bg-primary/50 backdrop-blur-md">
+    <div className="fixed top-0 left-0 flex justify-between items-center w-full max-w-screen px-2 py-1 h-24 z-10 duration-150 bg-secondary/50 dark:bg-primary/50 backdrop-blur-md">
       <div className="flex gap-1 h-full items-center">
         <Logo />
       </div>

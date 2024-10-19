@@ -43,7 +43,7 @@ export default function LocaleSwitcher() {
         <FaGlobe size={30} />
       </Button>
       <ul
-        className={`absolute bg-secondary top-[110%] rounded-sm overflow-hidden right-0 flex flex-col gap-x-3 ${
+        className={`absolute shadow bg-secondary top-[110%] rounded-sm overflow-hidden right-0 flex flex-col gap-x-3 ${
           expanded ? "" : "hidden"
         }`}
       >
@@ -51,8 +51,8 @@ export default function LocaleSwitcher() {
           return (
             <li
               className={`${
-                l === locale ? "text-accent" : "text-primary"
-              } bg-secondary py-1 px-4 font-bold text-xl duration-200 hover:brightness-75 cursor-pointer`}
+                l === locale ? "text-accent" : "text-secondary dark:text-primary"
+              } bg-primary dark:bg-secondary py-1 px-4 font-bold text-xl duration-200 hover:brightness-75 cursor-pointer`}
               key={l}
               onClick={() => {
                 changeLanguage(l);

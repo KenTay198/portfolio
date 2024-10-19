@@ -18,6 +18,7 @@ const CheckboxGroup = ({
   options,
   value,
   handleChange,
+  divClassName,
   ...props
 }: ICheckboxGroupProps) => {
   const wrapperProps = {
@@ -27,6 +28,7 @@ const CheckboxGroup = ({
     errorMessage,
     id: props.id,
     required: props.required,
+    className : divClassName,
   };
 
   return (

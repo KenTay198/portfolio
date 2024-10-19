@@ -13,6 +13,27 @@ body {
   margin: 0;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
   font-family: "Lato", sans-serif;
   overflow-x: hidden;
@@ -76,8 +97,8 @@ h1,
   }
 
   @media (max-width: $bp_tiny_phone) {
-    font-size: 36px;
-    line-height: calc(36px * 1.22);
+    font-size: 34px;
+    line-height: calc(34px * 1.22);
   }
 }
 
