@@ -7,6 +7,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode : "class",
   theme: {
     extend: {
       textShadow: {
@@ -14,13 +15,11 @@ module.exports = {
       },
       colors: {
         primary: "#0b3142",
-        secondary: "#ead1a9",
-        "secondary-0.5": "rgba(234,209,169,0.5)",
-        "secondary-0.8": "rgba(234,209,169,0.8)",
-        primaryAlt: "#092937",
-        secondaryAlt: "#e1bb80",
-        "secondaryAlt-0.5": "rgba(225,187,128,0.5)",
-        "secondaryAlt-0.8": "rgba(225,187,128,0.8)",
+        primaryDark: "#092937",
+        secondary: "#F6FCFF",
+        accent: "#E1BB80",
+        accentDark: "#BD9F70",
+        
       },
     },
   },

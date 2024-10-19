@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "./animations.scss";
+@import "./blobs.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,7 +19,7 @@ body {
   scroll-behavior: smooth;
   background-color: $primary;
   color: $secondary;
-  font-size: 20px;
+  font-size: 18px;
 
   &.modal-open {
     overflow: hidden;
@@ -52,29 +53,100 @@ ul {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
   font-family: "Montserrat", sans-serif;
 }
 
-h1 {
+h1,
+.h1 {
   font-weight: bold;
-  color: $secondaryAlt;
-  font-size: 70px;
+  font-size: 72px;
+  line-height: calc(72px * 1.22);
+  margin-bottom: 8px;
 
-  @media (max-width: 630px) {
-    font-size: 45px;
+  @media (max-width: $bp_tablet) {
+    font-size: 42px;
+    line-height: calc(42px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 36px;
+    line-height: calc(36px * 1.22);
   }
 }
 
-h2 {
-  font-size: 55px;
+h2,
+.h2 {
+  font-size: 42px;
+  line-height: calc(42px * 1.22);
 
-  @media (max-width: 630px) {
+  @media (max-width: $bp_tablet) {
     font-size: 30px;
+    line-height: calc(30px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 24px;
+    line-height: calc(24px * 1.22);
+  }
+}
+
+h3,
+.h3 {
+  font-size: 30px;
+  line-height: calc(30px * 1.22);
+
+  @media (max-width: $bp_tablet) {
+    font-size: 24px;
+    line-height: calc(24px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 20px;
+    line-height: calc(20px * 1.22);
+  }
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: calc(24px * 1.22);
+
+  @media (max-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: calc(20px * 1.22);
+  }
+
+  @media (max-width: $bp_tiny_phone) {
+    font-size: 18px;
+    line-height: calc(18px * 1.22);
   }
 }
 
 .error {
   border: 1px solid red;
   color: red;
+}
+
+.project-card {
+  & > div {
+    transition: 0.2s;
+    opacity: 0;
+  }
+
+  &:hover {
+    img {
+      scale: 1.1;
+    }
+
+    & > div {
+      opacity: 1;
+    }
+  }
 }
