@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <html lang={lang}>
-      <body className="duration-150 bg-secondary dark:bg-primary">
+      <body className="duration-150 bg-secondary text-black dark:bg-primary dark:text-white">
         <LocaleProvider>
           <LoadingProvider>
             <DarkModeProvider>{children}</DarkModeProvider>

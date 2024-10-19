@@ -20,6 +20,7 @@
       "@molecules/*": ["./src/components/shared/molecules/*"],
       "@organisms/*": ["./src/components/shared/organisms/*"],
       "@shared/*": ["./src/components/shared/*"],
+      "@modules/*": ["./src/components/modules/*"],
       "@components/*": ["./src/components/*"],
       "@styles/*": ["./src/styles/*"],
       "@dictionaries/*": ["./src/dictionaries/*"],

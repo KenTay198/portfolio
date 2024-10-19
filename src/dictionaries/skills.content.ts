@@ -55,7 +55,7 @@ const skillsContent: Record<string, ISkillsContent> = {
           "En même temps que ma découverte et mon développement au HTML, j'ai également pu travailler sur du CSS.",
           "Pendant ma période d'IUT, j'ai eu plus de difficultés à assimiler les spécificités du CSS, étant donné le peu de cours que l'on avait.",
           "C'est en étant livré à moi-même lors de mon alternance chez Elikya Academy Group, que j'ai pu expérimenter beaucoup de choses en CSS et notamment découvrir le SASS, qui m'a offert un confort de développement.",
-          "S'en est suivi la découverte de Tailwind qui a énormémént augmenté ma productivité, étant donné l'éxpérience du CSS que j'avais accumulée.",
+          "S'en est suivi la découverte de Tailwind qui a énormément augmenté ma productivité, étant donné l'éxpérience du CSS que j'avais accumulée.",
         ],
       },
       {
@@ -104,15 +104,24 @@ const skillsContent: Record<string, ISkillsContent> = {
           { name: "flutter", label: "Flutter", value: 3.5 },
           { name: "dart", label: "Dart", value: 3 },
         ],
+        descriptions: [
+          "Ma première expérience en développement mobile a été à Ynov lors d'un cours sur Flutter. J'ai plutôt apprécié donc j'ai un peu travaillé dessus, même dans mon alternance.",
+        ],
       },
       {
         name: "Autres",
         skills: [
           { name: "office", label: "Microsoft Office 365", value: 5 },
           { name: "canva", label: "Canva", value: 4.5 },
+          { name: "meta", label: "Réseaux sociaux Meta", value: 3.5 },
           { name: "seo", label: "SEO", value: 3.5 },
           { name: "photoshop", label: "Photoshop", value: 3 },
           { name: "bash", label: "Bash", value: 2.5 },
+          { name: "adobe", label: "Suite Adobe", value: 2 },
+        ],
+        descriptions: [
+          "J'ai développé d'autres compétences variées tout le long de ma vie, que ce soit à l'école ou pendant mon temps libre.",
+          "J'ai notamment appris à utiliser des outils tels que Canva et la suite Adobe pour créer des visuels adaptés à la charte graphique de l'entreprise et gérer des réseaux sociaux.",
         ],
       },
     ],
@@ -200,15 +209,24 @@ const skillsContent: Record<string, ISkillsContent> = {
           { name: "flutter", label: "Flutter", value: 3.5 },
           { name: "dart", label: "Dart", value: 3 },
         ],
+        descriptions: [
+          "My first experience with mobile development was at Ynov when we made a course about Flutter. I liked it so I tried to work on it even in my internship.",
+        ],
       },
       {
         name: "Others",
         skills: [
           { name: "office", label: "Microsoft Office 365", value: 5 },
           { name: "canva", label: "Canva", value: 4.5 },
+          { name: "meta", label: "Meta networks", value: 3.5 },
           { name: "seo", label: "SEO", value: 3.5 },
           { name: "photoshop", label: "Photoshop", value: 3 },
           { name: "bash", label: "Bash", value: 2.5 },
+          { name: "adobe", label: "Adobe Suite", value: 2 },
+        ],
+        descriptions: [
+          "I developed various other skills through my life, at school or during my free time.",
+          "In particular, I learned to use tools such as Canva and Adobe suite to create visuals adapted to the graphic charter of the company and manage social networks.",
         ],
       },
     ],

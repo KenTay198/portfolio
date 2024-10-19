@@ -13,7 +13,7 @@ const FavoriteTechnologies = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
   const { favoriteTechnologies } = homeContent[locale as keyof object];
 
   return (
-    <section {...props} className="bg-primary py-2.5 px-5">
+    <section {...props} className="bg-primary py-2.5 px-5 text-white">
       <h2 className="text-center font-bold mb-2.5">{favoriteTechnologies.title}</h2>
       <div className="flex flex-wrap items-center justify-center gap-8">
         <Image title="Next.js" src={Next} alt="Logo NextJs" width={100} />

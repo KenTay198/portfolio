@@ -1,18 +1,18 @@
 "use client";
-import projects from "@datas/projects";
+import projects, { IProject } from "@datas/projects";
 import projectsContent from "@dictionaries/projects.content";
 import Image from "next/image";
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, useEffect, useState } from "react";
 import { useLocaleState } from "src/context/LocaleContext";
 
-interface IProps extends HTMLAttributes<HTMLDivElement> {
-  /* Props go here */
-}
-
-const ProjectBanner = ({ ...props }: IProps) => {
-  const randomProjects = projects.sort(() => 0.5 - Math.random()).slice(0, 3);
+const ProjectBanner = ({ ...props }: HTMLAttributes<HTMLDivElement> ) => {
+  const [randomProjects, setRandomProjects] = useState<IProject[]>([]);
   const { locale } = useLocaleState();
   const dictionary = projectsContent[locale];
+
+  useEffect(() => {
+    setRandomProjects(projects.sort(() => 0.5 - Math.random()).slice(0, 3));
+  }, []);
 
   return (
     <div
@@ -24,14 +24,19 @@ const ProjectBanner = ({ ...props }: IProps) => {
       </div>
 
       <div className="relative flex-1 h-[500px]">
-        {randomProjects.map(({ frame, label }, i) => (
-          <div key={`project-banner-${label}`}>
+        {randomProjects.map(({ frame, label, name }, i) => (
+          <div key={`project-banner-${name}`}>
             <Image
               src={frame}
               alt={`${label} screenshot`}
               className="absolute animate-pulse"
               height={500}
-              style={{ top: 0, left: 200 * i, animationDuration : `${3}s`, animationDelay: `${300 * i}ms` }}
+              style={{
+                top: 0,
+                left: 200 * i,
+                animationDuration: `${3}s`,
+                animationDelay: `${300 * i}ms`,
+              }}
               unoptimized
             />
           </div>
