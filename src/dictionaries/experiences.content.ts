@@ -38,7 +38,7 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         ],
       },
       {
-        date: "01/10/2021 - Présent",
+        date: "01/10/2021 - 27/09/2024",
         title: "Alternance développeur web et mobile",
         etablissement: "Elikya Academy",
         missions: [
@@ -63,12 +63,15 @@ const experiencesContent: Record<string, IExperiencesContent> = {
           {
             label: "Administration de bases de données MySQL",
           },
+          {
+            label: "Mise en place d'un cloud et d'un CDN",
+          },
         ],
       },
     ],
     school: [
       {
-        date: "2015 - 2019",
+        date: "2016 - 2019",
         title: "Filière Scientifique - Spé ISN",
         etablissement: "Lycée Philibert Delorme",
         missions: [
@@ -91,8 +94,8 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         ],
       },
       {
-        date: "29/10/2021 - Présent",
-        title: "Mastère - expert développement web et mobile",
+        date: "29/10/2021 - Juillet 2024",
+        title: "Mastère - Expert développement Full Stack",
         etablissement: "Ynov Lyon",
         missions: [
           {
@@ -127,7 +130,7 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         ],
       },
       {
-        date: "01/10/2021 - Présent",
+        date: "01/10/2021 - 27/09/2024",
         title: "Web and mobile development apprenticeship",
         etablissement: "Elikya Academy",
         missions: [
@@ -152,12 +155,15 @@ const experiencesContent: Record<string, IExperiencesContent> = {
           {
             label: "MySQL database administration",
           },
+          {
+            label: "Cloud and CDN setup",
+          },
         ],
       },
     ],
     school: [
       {
-        date: "2015 - 2019",
+        date: "2016 - 2019",
         title: "Filière Scientifique - Spé ISN",
         etablissement: "Lycée Philibert Delorme",
         missions: [
@@ -180,8 +186,8 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         ],
       },
       {
-        date: "29/10/2021 - Présent",
-        title: "Mastère - web and mobile development expert",
+        date: "29/10/2021 - July 2024",
+        title: "Mastère - Full Stack development expert",
         etablissement: "Ynov Lyon",
         missions: [
           {

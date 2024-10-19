@@ -13,4 +13,16 @@ export const isValidPhone = (phone: string): boolean => {
 };
 
 export const getMyAge = () =>
-  new Date(new Date().getTime() - new Date("2002-07-29").getTime()).getUTCFullYear() - 1970
+  new Date(
+    new Date().getTime() - new Date("2002-07-29").getTime()
+  ).getUTCFullYear() - 1970;
+
+export const scrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};

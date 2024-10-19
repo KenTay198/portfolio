@@ -1,27 +1,26 @@
-import Image from "next/image";
+import React from "react";
 import homeContent from "@dictionaries/home.content";
-import Portrait from "@images/photos/john_portrait.png";
+import MyPresentation from "@modules/homepage/atoms/MyPresentation";
+import FavoriteTechnologies from "@modules/homepage/atoms/FavoriteTechnologies";
+import MySkills from "@modules/homepage/atoms/MySkills";
+import MyProjects from "@modules/homepage/atoms/MyProjects";
 
-function Home({ params }: { params: { lang: string } }) {
+export const generateMetadata = ({ params }: { params: { lang: string } }) => {
   const dictionary = homeContent[params.lang as keyof object];
 
+  return {
+    title: "John-Kenneth TAYLOR AFONAH",
+    description: dictionary.meta.description,
+  };
+};
+
+function Home() {
   return (
-    <div>
-      <section className="flex max-[1000px]:flex-col-reverse  gap-8 justify-center items-center px-3 mx-auto">
-        <div className="flex-1">
-          <h1 className="max-[1000px]:text-center">
-            John-Kenneth TAYLOR AFONAH
-          </h1>
-          <h2 className="max-[1000px]:text-center">{dictionary?.job}</h2>
-          <p className="mb-2 text-justify">{dictionary.description}</p>
-        </div>
-        <Image
-          src={Portrait}
-          alt="Portrait de John-Kenneth"
-          width={400}
-          className="shadow-xl rounded-full"
-        />
-      </section>
+    <div className="overflow-hidden">
+      <MyPresentation />
+      <FavoriteTechnologies />
+      <MySkills className="mb-[80px]" />
+      <MyProjects />
     </div>
   );
 }

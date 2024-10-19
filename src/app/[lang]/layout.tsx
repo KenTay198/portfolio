@@ -1,3 +1,4 @@
+import React from "react";
 import "@styles/globals.scss";
 import Layout from "@components/layouts/layout/Layout";
 import { i18n } from "src/i18n.config";
