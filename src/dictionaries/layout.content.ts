@@ -29,7 +29,7 @@ const layoutContent: Record<string, ILayoutContent> = {
       },
       { href: "/projects", label: "Projets", Icon: CgWebsite },
       { href: "/contact", label: "Contact", Icon: BsFillTelephoneFill },
-      { href: "/documents/CV.pdf", label: "CV", Icon: FaFileAlt },
+      { href: "/documents/CV_fr.pdf", label: "CV", Icon: FaFileAlt },
     ],
     loadingMessage:
       "Votre demande est en train d'être envoyée. Veuillez patienter s'il vous plaît !",
