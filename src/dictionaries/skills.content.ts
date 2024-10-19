@@ -12,6 +12,7 @@ export interface ISkill {
 
 interface ISkillsContent {
   title: string;
+  meta: { description: string };
   notationModal: {
     title: string;
     notations: string[];
@@ -23,6 +24,10 @@ interface ISkillsContent {
 const skillsContent: Record<string, ISkillsContent> = {
   fr: {
     title: "MES COMPÉTENCES",
+    meta: {
+      description:
+        "Découvrez les compétences que j'ai développées au cours de mes expériences professionnelles et de mon parcours scolaire.",
+    },
     notationModal: {
       title: "Notation",
       notations: [
@@ -129,6 +134,10 @@ const skillsContent: Record<string, ISkillsContent> = {
   },
   en: {
     title: "MY SKILLS",
+    meta: {
+      description:
+        "Discover the skills I developed through my professionnal experiences and my school career.",
+    },
     notationModal: {
       title: "Notation",
       notations: [

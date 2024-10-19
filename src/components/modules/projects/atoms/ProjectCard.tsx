@@ -12,7 +12,7 @@ const ProjectCard = ({ project, ...props }: IProps) => {
   return (
     <div
       {...props}
-      className={`cursor-pointer project-card relative flex-1 basis-[500px] rounded-xl overflow-hidden shadow-lg duration-200 hover:shadow-2xl max-w-[600px]`}
+      className={`cursor-pointer project-card relative flex-1 basis-[600px] rounded-xl overflow-hidden shadow-lg duration-200 hover:shadow-2xl max-w-[600px]`}
     >
       <Image
         src={image}

@@ -25,7 +25,7 @@ const layoutContent: Record<string, ILayoutContent> = {
       { href: "/experiences", label: "Expériences", Icon: BsFileEarmarkPersonFill },
       { href: "/projects", label: "Projets", Icon: CgWebsite },
       { href: "/contact", label: "Contact", Icon: BsFillTelephoneFill  },
-      { href: "/CV", label: "CV", Icon: FaFileAlt },
+      { href: `${process.env.NEXT_PUBLIC_SITE_URL}/documents/CV.pdf`, label: "CV", Icon: FaFileAlt },
     ],
     loadingMessage:
       "Votre demande est en train d'être envoyée. Veuillez patienter s'il vous plaît !",
@@ -37,7 +37,7 @@ const layoutContent: Record<string, ILayoutContent> = {
       { href: "/experiences", label: "Experiences", Icon: BsFileEarmarkPersonFill },
       { href: "/projects", label: "Projects", Icon: CgWebsite },
       { href: "/contact", label: "Contact", Icon: BsFillTelephoneFill  },
-      { href: "/CV", label: "CV", Icon: FaFileAlt },
+      { href: `${process.env.NEXT_PUBLIC_SITE_URL}/documents/CV_en.pdf`, label: "CV", Icon: FaFileAlt },
     ],
     loadingMessage:
       "Your request is being sent. Votre demande est en train d'être envoyée. Please wait !",

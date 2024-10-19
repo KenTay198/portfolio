@@ -1,23 +1,31 @@
 export interface IExperience {
   date: string;
-  title: string
-  etablissement: string
-  missions?: { label: string, href?: string }[]
+  title: string;
+  etablissement: string;
+  missions?: { label: string; href?: string }[];
 }
 
 interface IExperiencesContent {
-  title: string,
+  title: string;
+  meta: { description: string };
+  clickToSwitch: string;
   categories: {
     work: string;
     school: string;
-  }
-  work: (IExperience | undefined)[]
-  school: (IExperience | undefined)[]
+  };
+  work: (IExperience | undefined)[];
+  school: (IExperience | undefined)[];
 }
 
 const experiencesContent: Record<string, IExperiencesContent> = {
   fr: {
     title: "MES EXPÉRIENCES",
+    meta: {
+      description:
+        "Parcourez mon expérience professionnelle et mon parcours scolaire.",
+    },
+    clickToSwitch:
+      "Cliquez sur les boutons pour alterner en professionnel et scolaire.",
     categories: {
       work: "Travail",
       school: "Formation",
@@ -30,7 +38,8 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         etablissement: "Elikya Academy",
         missions: [
           {
-            label: "Réalisation d'un site web de formations en PHP et JS (JQuery)",
+            label:
+              "Réalisation d'un site web de formations en PHP et JS (JQuery)",
           },
           {
             label: "Réalisation d'un back-office",
@@ -99,17 +108,24 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         etablissement: "Ynov Lyon",
         missions: [
           {
-            label: "Apprentissage de plusieurs technologies web comme React, Node, MongoDB, Docker, etc..."
+            label:
+              "Apprentissage de plusieurs technologies web comme React, Node, MongoDB, Docker, etc...",
           },
           {
-            label: "Réalisation de multiple projets"
-          }
-        ]
+            label: "Réalisation de multiple projets",
+          },
+        ],
       },
-    ]
+    ],
   },
   en: {
     title: "MY EXPERIENCES",
+    meta: {
+      description:
+        "Walk through my professionnal experiences and my school career.",
+    },
+    clickToSwitch:
+      "Click on icons to switch between professionnal and school.",
     categories: {
       work: "Work",
       school: "School",
@@ -191,14 +207,15 @@ const experiencesContent: Record<string, IExperiencesContent> = {
         etablissement: "Ynov Lyon",
         missions: [
           {
-            label: "Learning of multiple web technologies such as React, Node, MongoDB, Docker, etc..."
+            label:
+              "Learning of multiple web technologies such as React, Node, MongoDB, Docker, etc...",
           },
           {
-            label: "Multiple projects"
-          }
-        ]
+            label: "Multiple projects",
+          },
+        ],
       },
-    ]
+    ],
   },
 };
 

@@ -27,7 +27,7 @@ const TextareaInput = ({
     <InputWrapper {...wrapperProps}>
       <textarea
         ref={ref}
-        className={`bg-primaryAlt p-2 shadow-md rounded-md w-full resize-none text-white ${error}`}
+        className={`bg-primaryAlt p-2 shadow-md rounded-md w-full resize-none  text-black ${error}`}
         {...props}
       />
     </InputWrapper>

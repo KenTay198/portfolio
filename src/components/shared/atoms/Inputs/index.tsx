@@ -3,6 +3,7 @@ import React, { HTMLAttributes } from "react";
 export interface IBaseInputProps {
   label?: string;
   labelClassName?: string;
+  divClassName?: string;
   description?: string;
   errorMessage?: string;
   error?: boolean;
