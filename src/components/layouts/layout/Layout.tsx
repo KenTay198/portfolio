@@ -40,7 +40,7 @@ function Layout({ children, lang, className }: IProps) {
 
         <Header lang={lang} />
 
-        <div className="relative pt-24 min-h-full overflow-hidden">
+        <div className="relative pt-24 min-h-full">
           {children}
         </div>
         <Footer />
