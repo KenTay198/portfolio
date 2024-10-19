@@ -102,7 +102,7 @@ const NavLink = ({ expanded, link, lang, ...props }: INavLinkProps) => {
   return (
     <Link
       {...props}
-      href={href.startsWith("http") ? href : `/${lang}/${href}`}
+      href={href.endsWith(".pdf") ? href : `/${lang}/${href}`}
       target={href.endsWith(".pdf") ? "_blank" : ""}
     >
       <div className={getClassName()}>
