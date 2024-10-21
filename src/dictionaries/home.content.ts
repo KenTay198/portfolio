@@ -1,9 +1,9 @@
 import { getMyAge } from "@utils/functions";
+import IDefaultContent from "./default.content";
 
 const age = getMyAge();
 
-interface IHomeContent {
-  meta: { description: string };
+interface IHomeContent extends IDefaultContent {
   presentation: {
     job: string;
     description: string;

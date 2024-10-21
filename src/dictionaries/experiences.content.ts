@@ -1,3 +1,5 @@
+import IDefaultContent from "./default.content";
+
 export interface IExperience {
   date: string;
   title: string;
@@ -5,9 +7,7 @@ export interface IExperience {
   missions?: { label: string; href?: string }[];
 }
 
-interface IExperiencesContent {
-  title: string;
-  meta: { description: string };
+interface IExperiencesContent extends IDefaultContent {
   clickToSwitch: string;
   categories: {
     work: string;
@@ -124,8 +124,7 @@ const experiencesContent: Record<string, IExperiencesContent> = {
       description:
         "Walk through my professionnal experiences and my school career.",
     },
-    clickToSwitch:
-      "Click on icons to switch between professionnal and school.",
+    clickToSwitch: "Click on icons to switch between professionnal and school.",
     categories: {
       work: "Work",
       school: "School",

@@ -1,3 +1,6 @@
+import IDefaultContent from "@dictionaries/default.content";
+import { i18n, Locale } from "src/i18n.config";
+
 export const capitalize = (string: string) =>
   string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
 
@@ -25,4 +28,28 @@ export const scrollTo = (id: string) => {
       block: "start",
     });
   }
+};
+
+export const getMetadata = (
+  { title, meta }: IDefaultContent,
+  path: string,
+  lang: string
+) => {
+  const languages: Partial<Record<Locale, string>> = {};
+
+  const locales = i18n.locales.filter((l) => l !== lang);
+
+  for (const locale of locales) {
+    languages[locale] = `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}${path}`;
+  }
+
+  return {
+    title: `${
+      title ? capitalize(title) + " | " : ""
+    }John-Kenneth TAYLOR AFONAH`,
+    description: meta.description,
+    alternates: {
+      languages,
+    },
+  };
 };

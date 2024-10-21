@@ -14,7 +14,6 @@ const ExperienceTimeline = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
 
   const toggleSelected = (type: Category) => {
     if (window.innerWidth > 600) return;
-    console.log(window.innerWidth);
     setSelected(type);
   };
 

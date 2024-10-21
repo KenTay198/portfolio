@@ -1,8 +1,6 @@
-interface IContactContent {
-  title: string;
-  meta: {
-    description: string;
-  };
+import IDefaultContent from "./default.content";
+
+interface IContactContent extends IDefaultContent {
   myNetworks: string;
   contactForm: string;
   formLabels: {
@@ -46,8 +44,7 @@ const contactContent: Record<string, IContactContent> = {
   en: {
     title: "CONTACT ME",
     meta: {
-      description:
-        "Contact me on my social networks or by my contact form.",
+      description: "Contact me on my social networks or by my contact form.",
     },
     formLabels: {
       firstName: "First name",
