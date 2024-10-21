@@ -7,9 +7,13 @@ interface IHomeContent extends IDefaultContent {
   presentation: {
     job: string;
     description: string;
+    situation: {
+      label: string;
+      value: string;
+    };
     buttons: {
       contactMe: string;
-      myResumte: string;
+      myResume: string;
     };
   };
   favoriteTechnologies: {
@@ -46,7 +50,11 @@ const homeContent: Record<string, IHomeContent> = {
       description: `Développeur full-stack junior de ${age} ans désireux d'en apprendre toujours plus sur le monde du développement. Passionné de la manipulation de données et de la réalisation de sites web toujours plus créatifs, je veux atteindre les limites du développement Web et les maîtriser.`,
       buttons: {
         contactMe: "Me contacter",
-        myResumte: "Mon CV",
+        myResume: "Mon CV",
+      },
+      situation: {
+        label: "Ma situation actuelle",
+        value: "En recherche d'un CDI aux alentours de Lyon",
       },
     },
     images: {
@@ -87,7 +95,11 @@ const homeContent: Record<string, IHomeContent> = {
       description: `${age}-year-old junior full-stack developer who wants to learn more about the world of development. I'm passionate about manipulating data and creating creative websites, and I want to push the boundaries of web development.`,
       buttons: {
         contactMe: "Contact me",
-        myResumte: "My resume",
+        myResume: "My resume",
+      },
+      situation: {
+        label: "My current situation",
+        value: "Looking for a long-term contract around Lyon, France",
       },
     },
     images: {
