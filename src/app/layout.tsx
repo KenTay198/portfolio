@@ -15,8 +15,27 @@ export const metadata : Metadata = {
   publisher: 'John-Kenneth TAYLOR AFONAH',
   icons : {
     icon : "/favicon.ico"
-  }
-
+  },
+  openGraph: {
+    title: 'John-Kenneth TAYLOR AFONAH',
+    description: 'Portfolio de John-Kenneth TAYLOR AFONAH.',
+    url: 'https://www.johnkennethtaylor.com/fr',
+    type: 'website',
+    images: [
+      {
+        url: '/images/photos/john/portrait_john.png',
+        width: 897,
+        height: 897,
+        alt: 'Portrait de John-Kenneth TAYLOR AFONAH',
+      },
+      {
+        url: '/favicon.ico',
+        width: 48,
+        height: 48,
+        alt: 'Logo de John-Kenneth TAYLOR AFONAH',
+      },
+    ],
+  },
 };
 
 
