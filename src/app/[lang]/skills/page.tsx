@@ -1,15 +1,12 @@
 import skillsContent from "@dictionaries/skills.content";
 import React from "react";
 import SkillsList from "@modules/skills/organisms/SkillsList";
-import { capitalize } from "@utils/functions";
+import { getMetadata } from "@utils/functions";
 
 export const generateMetadata = ({ params }: { params: { lang: string } }) => {
   const dictionary = skillsContent[params.lang];
 
-  return {
-    title: capitalize(dictionary.title) + " | John-Kenneth TAYLOR AFONAH",
-    description: dictionary.meta.description,
-  };
+  return getMetadata(dictionary, "/skills", params.lang);
 };
 
 function Skills({ params }: { params: { lang: string } }) {

@@ -1,3 +1,5 @@
+import IDefaultContent from "./default.content";
+
 export interface ISkillGroup {
   name: string;
   skills: ISkill[];
@@ -10,9 +12,7 @@ export interface ISkill {
   value: number;
 }
 
-interface ISkillsContent {
-  title: string;
-  meta: { description: string };
+interface ISkillsContent extends IDefaultContent {
   notationModal: {
     title: string;
     notations: string[];

@@ -41,7 +41,8 @@
     "**/*.tsx",
     "***/**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/[lang]/not-found.tsx"
+    "src/app/[lang]/not-found.tsx",
+    "src/app/sitemap.js"
   ],
   "exclude": ["node_modules"]
 }

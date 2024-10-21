@@ -6,10 +6,19 @@ import LoadingProvider from "src/context/LoadingContext";
 import { ToastContainer } from "react-toastify";
 import DarkModeProvider from "src/context/DarkModeContext";
 import LocaleProvider from "src/context/LocaleContext";
+import { Analytics } from "@vercel/analytics/react"
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "John-Kenneth TAYLOR AFONAH",
+  creator: 'John-Kenneth TAYLOR AFONAH',
+  publisher: 'John-Kenneth TAYLOR AFONAH',
+  icons : {
+    icon : "/favicon.ico"
+  }
+
 };
+
 
 export default function RootLayout({
   children,
@@ -22,6 +31,7 @@ export default function RootLayout({
 
   return (
     <html lang={lang}>
+      <Analytics />
       <body className="duration-150 bg-secondary text-black dark:bg-primary dark:text-white">
         <LocaleProvider>
           <LoadingProvider>

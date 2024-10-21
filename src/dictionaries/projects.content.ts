@@ -1,3 +1,5 @@
+import IDefaultContent from "./default.content";
+
 interface IProjectTechnos {
   language: string[];
   frameworks: string[];
@@ -12,11 +14,7 @@ export interface IProjectDescription {
   technos: IProjectTechnos;
 }
 
-interface IProjectsContent {
-  title: string;
-  meta: {
-    description: string;
-  };
+interface IProjectsContent extends IDefaultContent {
   goToSite: string;
   titles: {
     skills: string;
@@ -43,8 +41,9 @@ interface IProjectsContent {
 const projectsContent: Record<string, IProjectsContent> = {
   fr: {
     title: "MES PROJETS",
-    meta : {
-      description : "Consultez la liste des projets que j'ai réalisé, en groupe ou individuellement !" 
+    meta: {
+      description:
+        "Consultez la liste des projets que j'ai réalisé, en groupe ou individuellement !",
     },
     goToSite: "Visiter le site",
     projects: {
@@ -215,8 +214,9 @@ const projectsContent: Record<string, IProjectsContent> = {
   },
   en: {
     title: "MY PROJECTS",
-    meta : {
-      description : "See the list of all the projects I have done, in groups or alone !" 
+    meta: {
+      description:
+        "See the list of all the projects I have done, in groups or alone !",
     },
     goToSite: "Visit website",
     projects: {
