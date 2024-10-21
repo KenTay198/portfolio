@@ -24,7 +24,7 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
           width: 418,
           number: 1,
           placement: { top: -114, right: -122 },
-          className : "max-[870px]:hidden"
+          className: "max-[870px]:hidden",
         }}
         before={{
           color: darkMode ? "secondary" : "primary",
@@ -38,7 +38,7 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
         className="flex gap-[120px] flex-wrap justify-center items-center px-3 mx-auto py-[50px] lg:py-[105px]"
       >
         <div className="max-w-[800px]">
-          <h1 className="text-accent mb-0">
+          <h1 className="text-accent text-shadow mb-0">
             JOHN-KENNETH
             <br />
             TAYLOR AFONAH
@@ -46,9 +46,12 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
           <h2 className="font-bold text-black dark:text-white">
             {presentation.job}
           </h2>
-          <h3 className="mb-2 text-justify text-black dark:text-white">
+          <p className="h3 mb-2 font-semibold text-primary dark:text-accent">
+            {presentation.situation.label} : {presentation.situation.value}
+          </p>
+          <p className="h4 mb-2 text-justify text-black dark:text-white">
             {presentation.description}
-          </h3>
+          </p>
 
           <SocialNetworks className="mb-2" />
 
@@ -65,7 +68,7 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
               template={darkMode ? "accent" : "primary"}
               href="/CV"
             >
-              {presentation.buttons.myResumte}
+              {presentation.buttons.myResume}
             </Button>
           </div>
         </div>
