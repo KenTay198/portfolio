@@ -1,4 +1,5 @@
 import IDefaultContent from "@dictionaries/default.content";
+import { Metadata } from "next";
 import { i18n, Locale } from "src/i18n.config";
 
 export const capitalize = (string: string) =>
@@ -34,7 +35,7 @@ export const getMetadata = (
   { title, meta }: IDefaultContent,
   path: string,
   lang: string
-) => {
+): Metadata => {
   const languages: Partial<Record<Locale, string>> = {};
 
   const locales = i18n.locales.filter((l) => l !== lang);
@@ -49,6 +50,7 @@ export const getMetadata = (
     }John-Kenneth TAYLOR AFONAH`,
     description: meta.description,
     alternates: {
+      canonical : `${process.env.NEXT_PUBLIC_SITE_URL}/fr${path}`,
       languages,
     },
   };
