@@ -19,20 +19,20 @@ function ContactPage({ params }: { params: { lang: string } }) {
         {dictionary.title}
       </h1>
 
-      <section className="mb-10">
-        <h2 className="mb-2 font-bold text-center text-primary dark:text-accent">
-          {dictionary.myNetworks}
-        </h2>
-        <SocialNetworks withPhone className="mx-auto" />
-      </section>
-
-      <hr className="mb-10" />
-
-      <section>
-        <h2 className="mb-2 font-bold text-center text-primary dark:text-accent">
-          {dictionary.contactForm}
-        </h2>
-        <ContactForm />
+      <section className="flex items-center gap-10 max-[900px]:flex-col">
+        <div className="flex-1 min-[900px]:border-r">
+          <h2 className="mb-2 font-bold text-center text-primary dark:text-accent">
+            {dictionary.myNetworks}
+          </h2>
+          <SocialNetworks withPhone className="mx-auto" />
+        </div>
+        <hr className="w-full min-[900px]:hidden" />
+        <div className="flex-2 bg-accent p-3 rounded-lg text-black shadow-md">
+          <h2 className="mb-2 font-bold text-center text-primary">
+            {dictionary.contactForm}
+          </h2>
+          <ContactForm />
+        </div>
       </section>
     </div>
   );

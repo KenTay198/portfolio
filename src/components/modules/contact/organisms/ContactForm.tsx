@@ -99,24 +99,28 @@ const ContactForm = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <div {...props} className="flex flex-col gap-3">
-      <TextInput
-        required
-        onKeyDown={() => handleKeyPress("firstName")}
-        id="firstName"
-        label={dictionary.formLabels["firstName"]}
-        error={errors.some((e) => e === "firstName")}
-        value={formData.firstName ?? ""}
-        onChange={(e) => handleChange("firstName", e.target.value)}
-      />
-      <TextInput
-        required
-        onKeyDown={() => handleKeyPress("lastName")}
-        id="lastName"
-        label={dictionary.formLabels["lastName"]}
-        error={errors.some((e) => e === "lastName")}
-        value={formData.lastName ?? ""}
-        onChange={(e) => handleChange("lastName", e.target.value)}
-      />
+      <div className="flex flex-wrap gap-3">
+        <TextInput
+          required
+          onKeyDown={() => handleKeyPress("firstName")}
+          divClassName="flex-1"
+          id="firstName"
+          label={dictionary.formLabels["firstName"]}
+          error={errors.some((e) => e === "firstName")}
+          value={formData.firstName ?? ""}
+          onChange={(e) => handleChange("firstName", e.target.value)}
+        />
+        <TextInput
+          required
+          onKeyDown={() => handleKeyPress("lastName")}
+          divClassName="flex-1"
+          id="lastName"
+          label={dictionary.formLabels["lastName"]}
+          error={errors.some((e) => e === "lastName")}
+          value={formData.lastName ?? ""}
+          onChange={(e) => handleChange("lastName", e.target.value)}
+        />
+      </div>
       <TextInput
         required
         onKeyDown={() => handleKeyPress("email")}
@@ -166,7 +170,7 @@ const ContactForm = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
           Veuillez remplir correctement tous les champs.
         </p>
       )}
-      <Button template="accent" type="filled" onClick={handleSubmit}>
+      <Button template="primary" type="filled" onClick={handleSubmit}>
         ENVOYER
       </Button>
     </div>
