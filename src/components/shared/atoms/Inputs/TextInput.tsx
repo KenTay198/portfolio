@@ -6,6 +6,7 @@ const TextInput = ({
   description,
   error,
   errorMessage,
+  divClassName,
   ...props
 }: IBaseInputProps & InputHTMLAttributes<HTMLInputElement>) => {
   const wrapperProps = {
@@ -15,15 +16,16 @@ const TextInput = ({
     errorMessage,
     id: props.id,
     required: props.required,
+    className: divClassName,
   };
 
   return (
     <InputWrapper {...wrapperProps}>
       <input
+        {...props}
         className={`bg-primaryAlt p-2 shadow-md rounded-md w-full text-black ${
           error ? "error" : ""
         }`}
-        {...props}
       />
     </InputWrapper>
   );

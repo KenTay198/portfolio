@@ -22,6 +22,9 @@ module.exports = {
         accentDark: "#BD9F70",
         
       },
+      flex : {
+        "2" : "2 2 0%"
+      }
     },
   },
   plugins: [
