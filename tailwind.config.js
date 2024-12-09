@@ -20,7 +20,6 @@ module.exports = {
         secondary: "#F6FCFF",
         accent: "#E1BB80",
         accentDark: "#BD9F70",
-        
       },
       flex : {
         "2" : "2 2 0%"
