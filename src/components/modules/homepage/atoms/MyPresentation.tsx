@@ -46,9 +46,6 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
           <h2 className="font-bold text-black dark:text-white">
             {presentation.job}
           </h2>
-          <p className="h3 mb-2 font-semibold text-primary dark:text-accent">
-            {presentation.situation.label} : {presentation.situation.value}
-          </p>
           <p className="h4 mb-2 text-justify text-black dark:text-white">
             {presentation.description}
           </p>
