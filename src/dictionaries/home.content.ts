@@ -7,10 +7,6 @@ interface IHomeContent extends IDefaultContent {
   presentation: {
     job: string;
     description: string;
-    situation: {
-      label: string;
-      value: string;
-    };
     buttons: {
       contactMe: string;
       myResume: string;
@@ -43,18 +39,14 @@ interface IHomeContent extends IDefaultContent {
 const homeContent: Record<string, IHomeContent> = {
   fr: {
     meta: {
-      description: `Développeur full-stack junior de ${age} ans ayant pour envie d'en apprendre toujours plus sur le monde du développement.`,
+      description: `Développeur full-stack de ${age} ans passionné par monde du développement web.`,
     },
     presentation: {
-      job: "Développeur web Full-Stack junior",
-      description: `Développeur full-stack junior de ${age} ans désireux d'en apprendre toujours plus sur le monde du développement. Passionné de la manipulation de données et de la réalisation de sites web toujours plus créatifs, je veux atteindre les limites du développement Web et les maîtriser.`,
+      job: "Développeur web Full-Stack",
+      description: `Développeur full-stack de ${age} ans. Passionné de la manipulation de données et de la réalisation de sites web toujours plus créatifs, je veux atteindre les limites du développement Web et les maîtriser.`,
       buttons: {
         contactMe: "Me contacter",
         myResume: "Mon CV",
-      },
-      situation: {
-        label: "Ma situation actuelle",
-        value: "En recherche d'un CDI aux alentours de Lyon",
       },
     },
     images: {
@@ -88,18 +80,14 @@ const homeContent: Record<string, IHomeContent> = {
   },
   en: {
     meta: {
-      description: `${age}-year-old junior full-stack developer willing to learn more and more about the world of development.`,
+      description: `${age}-year-old full-stack developer passionated about web development.`,
     },
     presentation: {
-      job: "Junior Full-Stack web developer",
-      description: `${age}-year-old junior full-stack developer who wants to learn more about the world of development. I'm passionate about manipulating data and creating creative websites, and I want to push the boundaries of web development.`,
+      job: "Full-Stack web developer",
+      description: `${age}-year-old full-stack developer. I'm passionate about manipulating data and creating creative websites, and I want to push the boundaries of web development.`,
       buttons: {
         contactMe: "Contact me",
         myResume: "My resume",
-      },
-      situation: {
-        label: "My current situation",
-        value: "Looking for a long-term contract around Lyon, France",
       },
     },
     images: {
