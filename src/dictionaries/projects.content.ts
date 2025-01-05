@@ -1,3 +1,4 @@
+import ElikyaProjectInfo from "@modules/projects/molecules/ProjectGroupInfo/ElikyaProjectInfo";
 import IDefaultContent from "./default.content";
 
 interface IProjectTechnos {
@@ -12,6 +13,16 @@ export interface IProjectDescription {
   description: string;
   skills: string[];
   technos: IProjectTechnos;
+}
+
+export interface IProjectGroup {
+  label: string;
+  Infos?: (props: any) => JSX.Element;
+}
+
+export interface IElikyaGroup extends IProjectGroup {
+  cartography: string;
+  learnMore: string;
 }
 
 interface IProjectsContent extends IDefaultContent {
@@ -35,6 +46,10 @@ interface IProjectsContent extends IDefaultContent {
     bantudojo: IProjectDescription;
     extranet: IProjectDescription;
     elikya_admin: IProjectDescription;
+  };
+  groups: {
+    elikya: IElikyaGroup;
+    school: IProjectGroup;
   };
 }
 
@@ -211,6 +226,15 @@ const projectsContent: Record<string, IProjectsContent> = {
       others: "Autres",
       database: "Base de données",
     },
+    groups: {
+      elikya: {
+        label: "Elikya Academy",
+        cartography: "Cartographie du SI",
+        learnMore: "En savoir plus",
+        Infos: ElikyaProjectInfo,
+      },
+      school: { label: "Scolaire" },
+    },
   },
   en: {
     title: "MY PROJECTS",
@@ -383,6 +407,15 @@ const projectsContent: Record<string, IProjectsContent> = {
       style: "Style",
       others: "Others",
       database: "Database",
+    },
+    groups: {
+      elikya: {
+        label: "Elikya Academy",
+        cartography: "Information system map",
+        learnMore: "Learn more",
+        Infos: ElikyaProjectInfo,
+      },
+      school: { label: "School" },
     },
   },
 };
