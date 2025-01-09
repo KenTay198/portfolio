@@ -46,7 +46,7 @@ const projects: IProject[] = [
     frame: FrameElikya,
     href: "https://elikya-academy.com",
     name: "elikya",
-    type: "Full-Stack",
+    type: "Front-end",
   },
   {
     label: "GamerHub",
@@ -57,15 +57,15 @@ const projects: IProject[] = [
     name: "gamerhub",
     type: "Full-Stack",
   },
-  {
-    label: "Elikya Academy Formations",
-    technos: ["NextJS"],
-    image: SiteFormations,
-    frame: FrameFormations,
-    href: "https://formations.elikya-academy.com",
-    name: "elikya_formations",
-    type: "Full-Stack",
-  },
+  // {
+  //   label: "Elikya Academy Formations",
+  //   technos: ["NextJS"],
+  //   image: SiteFormations,
+  //   frame: FrameFormations,
+  //   href: "https://formations.elikya-academy.com",
+  //   name: "elikya_formations",
+  //   type: "Full-Stack",
+  // },
   {
     label: "Extranet Elikya",
     technos: ["NextJS"],
