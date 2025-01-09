@@ -46,7 +46,7 @@ const projects: IProject[] = [
     frame: FrameElikya,
     href: "https://elikya-academy.com",
     name: "elikya",
-    type: "Front-end",
+    type: "Front",
   },
   {
     label: "GamerHub",
