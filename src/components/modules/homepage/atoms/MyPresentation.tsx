@@ -63,7 +63,8 @@ const MyPresentation = ({ ...props }: HTMLAttributes<HTMLDivElement>) => {
             <Button
               type="filled"
               template={darkMode ? "accent" : "primary"}
-              href="/CV"
+              href={presentation.buttons.resumeURL}
+              target="_blank"
             >
               {presentation.buttons.myResume}
             </Button>
