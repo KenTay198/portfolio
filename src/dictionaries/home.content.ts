@@ -10,6 +10,7 @@ interface IHomeContent extends IDefaultContent {
     buttons: {
       contactMe: string;
       myResume: string;
+      resumeURL : string;
     };
   };
   favoriteTechnologies: {
@@ -47,6 +48,7 @@ const homeContent: Record<string, IHomeContent> = {
       buttons: {
         contactMe: "Me contacter",
         myResume: "Mon CV",
+        resumeURL: "/documents/CV_fr.pdf"
       },
     },
     images: {
@@ -88,6 +90,7 @@ const homeContent: Record<string, IHomeContent> = {
       buttons: {
         contactMe: "Contact me",
         myResume: "My resume",
+        resumeURL: "/documents/CV_en.pdf"
       },
     },
     images: {
